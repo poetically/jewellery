@@ -2,44 +2,47 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Начало</title>
-    <link rel="preload" href="fonts/poppins-v15-latin-regular.woff2" as="font">
-    <link rel="preload" href="fonts/poppins-v15-latin-500.woff2" as="font">
-    <link rel="preload" href="fonts/cormorant-garamond-v9-latin-600.woff2" as="font">
-    <link rel="preload" href="fonts/cormorant-garamond-v9-latin-italic.woff2" as="font">
-    <link rel="preload" href="fonts/cormorant-garamond-v9-latin-700.woff2" as="font">
+    <title>CHjewellery</title>
+    <link rel="preload" href="fonts/poppins-v15-latin-regular.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/poppins-v15-latin-500.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/cormorant-garamond-v9-latin-600.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/cormorant-garamond-v9-latin-italic.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/cormorant-garamond-v9-latin-700.woff2" as="font" crossorigin>
     <link rel="stylesheet" href="css/styles.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
   <body>
     <header class="main-header">
       <div class="main-header__top">
-        <img class="main-header__logo" src="img/logo.svg" width="66" height="66" alt="C H jewellery logo">
-        <form class="search" action="#" method="submit">
+        <a>
+          <img class="main-header__logo" src="img/logo.svg" width="66" height="66" alt="C H jewellery logo">
+        </a>
+        <form class="main-header__search search" action="#" method="get">
           <div class="search__inner">
             <input type="text" placeholder="Type here to search">
           </div>
         </form>
-        <a href="login.html">Login</a>
-        <a href="#">Cart <span>0</span></a>
+        <div class="main-header__login-cart">
+          <a href="login.html">Login</a>
+          <a href="#">Cart <span>0</span></a>
+        </div>
       </div>
-
       <div class="breakline"></div>
-      <div class="main-header__jewellery-types jewellery-types">
+      <div class="main-header__jewellery-types">
         <ul>
-          <li class="jewellery-types__item"><a href="#">What's new</a></li>
-          <li class="jewellery-types__item"><a href="#">Chokers</a></li>
-          <li class="jewellery-types__item"><a href="#">Necklaces</a></li>
-          <li class="jewellery-types__item"><a href="#">Rings</a></li>
-          <li class="jewellery-types__item"><a href="#">Earrings</a></li>
+          <li class="main-header__jewellery-item"><a href="#">What's new</a></li>
+          <li class="main-header__jewellery-item"><a href="#">Chokers</a></li>
+          <li class="main-header__jewellery-item"><a href="#">Necklaces</a></li>
+          <li class="main-header__jewellery-item"><a href="#">Rings</a></li>
+          <li class="main-header__jewellery-item"><a href="#">Earrings</a></li>
         </ul>
       </div>
     </header>
     <main class="page-main">
-      <h1 class="visually-hidden">General information about C H juwellery : news, blogs, faq.</h1>
+      <h1 class="visually-hidden">General information about C H jewellery : news, blogs, faq.</h1>
       <div class="page-main__title-wrapper">
-        <p>Perfection</p>
-        <p>made to be yours</p>
+        <p class="page-main__title">Perfection</p>
+        <p class="page-main__subtitle">made to be yours</p>
       </div>
 
     </main>

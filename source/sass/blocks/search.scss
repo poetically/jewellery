@@ -1,0 +1,28 @@
+.search__inner {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 14px;
+    top: 0;
+    left: 0;
+    background-image: url("../img/icon-search.svg");
+  }
+
+  input {
+    width: 220px;
+    margin-left: 40px;
+    border: none;
+  }
+
+  input::placeholder {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #9b9997;
+  }
+}
+
+

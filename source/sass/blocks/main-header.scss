@@ -1,0 +1,32 @@
+.main-header__top {
+  display: flex;
+  max-width: 1170px;
+  justify-content: space-between;
+  margin: 30px auto 20px;
+}
+
+.main-header__search {
+  order: -1;
+}
+
+.main-header__jewellery-types {
+  width: 493px;
+  margin: 25px auto 25px;
+}
+
+.main-header__jewellery-types ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  // justify-content: space-between;
+}
+
+.main-header__jewellery-item a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.main-header__jewellery-item + .main-header__jewellery-item {
+  margin-left: 35px;
+}

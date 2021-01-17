@@ -1,0 +1,67 @@
+.page-main__title-wrapper {
+  background-image: url("../img/bg-top-desktop.jpg");
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  min-height: 463px;
+  background-color: #5f4131;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/bg-top-desktop@2x.jpg");
+  }
+
+  @media (min-width: $beyond-desktop-width) {
+    background-position: center;
+  }
+
+  @media (max-width: $tablet-max-width) {
+    // height: 638px;
+  }
+
+  @media (max-width: $tablet-min-width) {
+    background-image: url("../img/bg-top-tablet.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-top-tablet@2x.jpg");
+    }
+  }
+
+  @media (max-width: $mobile-max-width) {
+    // height: 500px;
+  }
+
+  @media (max-width: $mobile-min-width) {
+    background-image: url("../img/bg-top-mobile.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-top-mobile@2x.jpg");
+    }
+  }
+}
+
+.page-main__title {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 45px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  padding-top: 195px;
+  text-align: center;
+  margin: 0 0 5px;
+}
+
+.page-main__subtitle {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 38px;
+  line-height: 130%;
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+
+}
