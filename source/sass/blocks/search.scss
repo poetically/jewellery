@@ -1,20 +1,22 @@
 .search__inner {
   position: relative;
+  padding-left: 28px;
 
   &::before {
     position: absolute;
     content: "";
     width: 14px;
     height: 14px;
-    top: 0;
+    top: 3px;
     left: 0;
-    background-image: url("../img/icon-search.svg");
+    mask-image: url("../img/icon-search.svg");
+    background-color: #000000;
   }
 
   input {
     width: 220px;
-    margin-left: 40px;
     border: none;
+    padding: 0;
   }
 
   input::placeholder {
@@ -22,6 +24,28 @@
     font-size: 14px;
     line-height: 21px;
     color: #9b9997;
+  }
+
+
+  @media (max-width: $tablet-max-width) {
+    padding-left: 0;
+
+    &::before {
+      top: 13px;
+      left: 15px;
+      background-color: #ffffff;
+    }
+
+    input {
+      height: 40px;
+      border-radius: 21px;
+      padding-left: 40px;
+      padding-right: 30px;
+    }
+
+    input::placeholder {
+      color: transparent;
+    }
   }
 }
 

@@ -1,21 +1,118 @@
+.main-header {
+  @media (max-width: $tablet-max-width) {
+    // position: relative;
+    background-color: $brown;
+  }
+}
+
+.main-header__menu-button {
+  display: none;
+
+  @media (max-width: $tablet-max-width) {
+    // position: absolute;
+    display: block;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 30px;
+    border: none;
+    mask-image: url("../img/icon-menu.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: #ffffff;
+  }
+}
+
 .main-header__top {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  column-gap: 50px;
   max-width: 1170px;
-  justify-content: space-between;
-  margin: 30px auto 20px;
+  margin: 0 auto 15px;
+  padding-top: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  @media (max-width: $tablet-max-width) {
+
+  }
+}
+
+.main-header__logo path {
+  fill: $brown;
+
+  @media (max-width: $tablet-max-width) {
+    fill: #ffffff;
+  }
 }
 
 .main-header__search {
-  order: -1;
+  // order: -1;
+  grid-row-start: 1;
+  grid-column: 1 / 2;
+  margin-top: 13px;
+
+  @media (max-width: $tablet-max-width) {
+    // order: 2;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
 }
 
+.main-header__search input {
+  @media (max-width: $tablet-max-width) {
+
+    background-color: lighten($brown, 15%);
+    color: #ffffff;
+  }
+}
+
+.main-header__login-cart {
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    padding-top: 12px;
+  }
+
+  a + a {
+    margin-left: 37px;
+  }
+}
+
+.main-header__login--top {
+  @media (max-width: $tablet-max-width) {
+    display: none;
+  }
+}
+
+.main-header__breakline {
+  border-bottom: 1px solid #f6f5f4;
+}
+
+// .main-header__login-cart a + .main-header__login-cart a {
+//   margin-left: 30px;
+// }
+
 .main-header__jewellery-types {
-  width: 493px;
-  margin: 25px auto 25px;
+  display: flex;
+  padding-top: 18px;
+  padding-bottom: 20px;
+  border-top: 1px solid #f6f5f4;
+  border-bottom: 1px solid #f6f5f4;
 }
 
 .main-header__jewellery-types ul {
   display: flex;
+  max-width: 1000px;
+  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -24,9 +121,20 @@
 
 .main-header__jewellery-item a {
   text-decoration: none;
-  color: #000000;
+  color: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .main-header__jewellery-item + .main-header__jewellery-item {
   margin-left: 35px;
+}
+
+.main-header__about-info {
+  display: none;
+}
+
+.main-header__login--bottom {
+  display: none;
 }

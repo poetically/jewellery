@@ -1,7 +1,14 @@
+// html {
+//   height: 100%;
+// }
+
 body {
   font-family: "Poppins", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   color: $text-basic;
   background-color: $bg-basic;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
 }
