@@ -12,4 +12,6 @@ source/css/*.css
 source/css/*.map
 source/test.html
 source/sass/test.scss
+source/retest.html
+source/sass/retest.scss
 Thumbs.db

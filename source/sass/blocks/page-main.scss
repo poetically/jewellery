@@ -65,3 +65,9 @@
   margin: 0;
 
 }
+
+.page-main__title-wrapper--menu-opened {
+  @media (max-width: $tablet-max-width) {
+    margin-top: 126px;
+  }
+}

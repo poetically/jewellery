@@ -1,14 +1,21 @@
-// html {
-//   height: 100%;
-// }
+html {
+  height: 100%;
+}
 
 body {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
   font-family: "Poppins", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   color: $text-basic;
   background-color: $bg-basic;
   min-width: 320px;
+  min-height: 100%;
   margin: 0;
   padding: 0;
 }
+
+// *, *::after, *::before {
+//   box-sizing: border-box;
+// }
