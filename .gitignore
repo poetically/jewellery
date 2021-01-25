@@ -14,4 +14,7 @@ source/test.html
 source/sass/test.scss
 source/retest.html
 source/sass/retest.scss
+source/js/jquery.js
+source/js/retest.js
+source/js/slick.js
 Thumbs.db

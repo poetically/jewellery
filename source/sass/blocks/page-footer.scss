@@ -1,0 +1,32 @@
+.page-footer {
+  color: #ffffff;
+  background-color: #000000;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.page-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  // grid-template-columns: 500px max-content max-content max-content;
+  max-width: 1170px;
+  width: 100%;
+  padding-left: 98px;
+  padding-right: 98px;
+}
+
+.page-footer__conditions,
+.page-footer__about-info,
+.page-footer__social {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    padding-bottom: 15px;
+  }
+}
+
+

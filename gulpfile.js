@@ -5,6 +5,9 @@ const sass = require("gulp-sass");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const sync = require("browser-sync").create();
+const rename = require('gulp-rename');
+const imagemin = require('gulp-imagemin');
+const svgstore = require('gulp-svgstore');
 
 // Styles
 
@@ -22,6 +25,25 @@ const styles = () => {
 }
 
 exports.styles = styles;
+
+const sprite = () => {
+  return gulp
+    .src('source/img/icon-{pinterest,fb,insta,twitter}.svg')
+    .pipe(
+      imagemin([
+        imagemin.svgo({
+          plugins: [
+            { removeViewBox: false },
+            { removeAttrs: { attrs: '(fill)' }}
+          ]
+        })
+      ])
+    )
+    .pipe(svgstore())
+    .pipe(rename('sprite.svg'))
+    .pipe(gulp.dest('source/img'));
+};
+exports.sprite = sprite;
 
 // Server
 
