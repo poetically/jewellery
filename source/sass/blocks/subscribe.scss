@@ -1,11 +1,20 @@
+.subscribe {
+  width: 500px;
+
+  @media (max-width: 1250px) {
+    width: 100%;
+  }
+}
+
 .subscribe__title {
   font-family: "Cormorant Garamond", "Georgia", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 34px;
-  line-height: 130%;
-  letter-spacing: 0.03em;
+  line-height: 95%;
+  letter-spacing: 0.025em;
   margin: 0;
+  margin-bottom: 20px;
   padding: 0;
 }
 
@@ -14,14 +23,40 @@
   font-size: 16px;
   line-height: 130%;
   margin: 0;
+  margin-bottom: 35px;
   padding: 0;
 }
 
 .subscribe__form-inner {
   display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-bottom: 8px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+  }
+
+  @media (max-width: 1250px) {
+    width: 560px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    max-width: 560px;
+    width: 100%;
+  }
 }
 
 .subscribe__form input {
+  width: 350px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: #000000;
   border: none;
   caret-color: #ffffff;
@@ -43,11 +78,44 @@
     font-size: 14px;
     line-height: 21px;
   }
+
+  @media (max-width: $mobile-max-width) {
+    max-width: 350px;
+    width: 100%;
+  }
 }
 
 .subscribe__form button {
+  display: flex;
+  align-items: center;
   background-color: transparent;
   color: #ffffff;
   border: none;
+  padding: 0;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  span {
+    margin-right: 12px;
+  }
 }
+
+.subscribe__form label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+

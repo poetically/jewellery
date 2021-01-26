@@ -28,7 +28,7 @@ exports.styles = styles;
 
 const sprite = () => {
   return gulp
-    .src('source/img/icon-{pinterest,fb,insta,twitter}.svg')
+    .src('source/img/icon-{pinterest,fb,insta,twitter,right-flash}.svg')
     .pipe(
       imagemin([
         imagemin.svgo({

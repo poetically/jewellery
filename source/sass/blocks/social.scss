@@ -1,7 +1,46 @@
-.social__icon a {
-  display: flex;
+
+
+.social__icon {
+  fill: currentColor;
+  justify-self: center;
+
+  @media (max-width: $mobile-max-width) {
+    &--fb {
+      width: 12px;
+      height: 21px;
+    }
+
+    &--insta {
+      width: 20px;
+      height: 21px;
+    }
+
+    &--pinterest {
+      width: 20px;
+      height: 21px;
+    }
+
+    &--twitter {
+      width: 20px;
+      height: 18px;
+    }
+  }
 }
 
-.social__icon path {
-  fill: #ffffff;
+.social__item {
+  display: grid;
+  grid-template-columns: 40px max-content;
+
+  @media (max-width: $mobile-max-width) {
+    display: block;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    span {
+      display: none;
+    }
+  }
 }
+
