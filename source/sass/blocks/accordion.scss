@@ -1,0 +1,88 @@
+.accordion {
+  max-width: 970px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #a87b62;
+}
+
+.accordion__item {
+  padding-top: 49px;
+  padding-bottom: 49px;
+}
+
+.accordion__item:not(:last-child) {
+  border-bottom: 1px solid $brown;
+}
+
+.accordion__control {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding-left: 38px;
+  font-weight: 500;
+  font-size: 18px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 17px;
+    height: 10px;
+    right: 50px;
+    bottom: 5px;
+    background-image: url("../img/icon-shevron.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+
+  @media (max-width: $tablet-max-width) {
+    padding-left: 50px;
+
+    &::after {
+      width: 23px;
+      height: 12px;
+      right: 25px;
+    }
+  }
+
+  @media (max-width: $mobile-max-width) {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 60px;
+
+    &::after {
+      width: 20px;
+      height: 10px;
+    }
+  }
+}
+
+.accordion__item--active .accordion__control::after {
+  transform: rotate(180deg);
+  transition: all 0.4s ease;
+}
+
+.accordion__item .accordion__control::after {
+  transition: all 0.4s ease;
+}
+
+.accordion__panel {
+  display: block;
+  width: 540px;
+  padding-left: 50px;
+  // padding-top: 15px;
+  box-sizing: border-box;
+  transition: all 0.4s ease;
+  overflow: hidden;
+
+  @media (max-width: $mobile-max-width) {
+    // box-sizing: border-box;
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 60px;
+  }
+}
+
+.accordion__item--active .accordion__panel {
+  padding-top: 15px;
+}

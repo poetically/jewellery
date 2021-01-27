@@ -1,0 +1,30 @@
+.faq {
+  // max-width: 1170px;
+  // width: 100%;
+  padding-left: 98px;
+  padding-right: 98px;
+  margin: 0 auto;
+
+  @media (min-width: $beyond-desktop-width) {
+    max-width: 970px;
+  }
+
+  @media (max-width: $tablet-max-width) {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.faq__title {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
