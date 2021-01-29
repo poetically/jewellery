@@ -1,0 +1,21 @@
+.subtitle-link {
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $brown;
+  }
+
+  a:hover,
+  a:focus {
+    opacity: 0.8;
+  }
+
+  a:active {
+    opacity: 0.6;
+  }
+}

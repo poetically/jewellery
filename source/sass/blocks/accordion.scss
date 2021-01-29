@@ -10,6 +10,10 @@
   padding-bottom: 49px;
 }
 
+// .accordion__item--active {
+//   padding-bottom: 34px;
+// }
+
 .accordion__item:not(:last-child) {
   border-bottom: 1px solid $brown;
 }
@@ -86,3 +90,7 @@
 .accordion__item--active .accordion__panel {
   padding-top: 15px;
 }
+
+// .accordion__item--active .accordion__control {
+//   padding-bottom: 15px;
+// }
