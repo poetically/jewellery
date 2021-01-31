@@ -1,11 +1,16 @@
 
 'use strict';
 (function() {
+  const PADDING = 15;
   const pageHeader = document.querySelector('.page-header');
   const menuButton = pageHeader.querySelector('.page-header__menu-button');
   const accordionControls = document.querySelectorAll('.accordion__control');
   const accordionPanels = document.querySelectorAll('.accordion__panel');
-  const PADDING = 15;
+  const fourSlides = document.querySelectorAll('.carousel__slide');
+  const mQueryTablet = window.matchMedia('(max-width: 1023px)');
+
+
+
 
 
   if (pageHeader !== null && menuButton !== null) {
@@ -42,46 +47,65 @@
     })
   )
 
-  new Swiper('.carousel__container', {
+
+  const carousel = new Swiper('.carousel__container', {
     // navigation: {
       // prevEl: '.carousel__prev',
       // nextEl: '.carousel__next'
     // }
 
     pagination: {
-      el: '.swiper-pagination',
-      clickable: true
+      el: '.swiper__pagination',
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (index + 1) + '</span>';
+      },
     },
-    grabCursor: true,
+    // grabCursor: true,
     keyboard: {
       enabled: true,
     },
     mousewheel: {
       sensitivity: 1,
-      // eventsTarget: '.carousel__container'
     },
-    slidesPerView: 4,
+    // slidesPerView: 4,
     watchOverflow: true,
     spaceBetween: 30,
-    slidesPerGroup: 4,
+    // slidesPerGroup: 4,
+    // loop: true,
+    observer: true,
+    // loopAdditionalSlides: 4,
     breakpoints: {
       320: {
         slidesPerView: 2,
         slidesPerGroup: 2,
       },
-      768: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-      },
+      // 768: {
+      //   slidesPerView: 3,
+      //   slidesPerGroup: 3,
+      // },
       1024: {
         slidesPerView: 4,
         slidesPerGroup: 4,
       }
     }
-
-
-
   });
+
+
+  // if (mQueryTablet.matches) {
+  //   // let slidesFirst = carousel.slides;
+  //   carousel.removeSlide([2, 3, 6, 7, 10, 11]);
+  //   // let slides = carousel.slides;
+  //   // carousel.appendSlide([carousel.slides[0], carousel.slides[1]]);
+  //   // let slides = document.querySelectorAll('.carousel__slide');
+  //   // const wrapper = document.querySelector('.carousel__slide-wrapper');
+  //   // wrapper.removeChild(wrapper.childNodes[2, 3]);
+  //   // wrapper.appendChild(wrapper.childNodes[0, 1]);
+  //   console.log(slides.length);
+  // }
+
+
+
 })();
 
 // 'use strict';
