@@ -49,10 +49,10 @@
 
 
   const carousel = new Swiper('.carousel__container', {
-    // navigation: {
-      // prevEl: '.carousel__prev',
-      // nextEl: '.carousel__next'
-    // }
+    navigation: {
+      prevEl: '.carousel__button-prev',
+      nextEl: '.carousel__button-next',
+    },
 
     pagination: {
       el: '.swiper__pagination',

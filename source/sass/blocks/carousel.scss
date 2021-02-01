@@ -1,37 +1,43 @@
 .carousel {
-  width: 100%;
-  padding-left: 98px;
-  padding-right: 98px;
-  box-sizing: border-box;
+  max-width: 1170px;
+  padding: 0 60px;
+  margin: 0 auto;
 
-  @media (min-width: $beyond-desktop-width) {
-    max-width: 1170px;
-    margin: 0 auto;
-    box-sizing: content-box;
+  @media (max-width: $tablet-max-width) {
+    max-width: 678px;
+    padding: 0 45px;
+  }
+
+  @media (max-width: 600px) {
+    width: 290px;
   }
 }
-
-// .carousel__container {
-//   position: relative;
-// }
 
 .carousel__button-prev,
 .carousel__button-next {
   // display: block;
-  top: 0;
+  top: 2px;
   border: none;
-  // width: 40px;
-  // height: 15px;
-  // background-color: transparent;
+  width: 50px;
+  height: 20px;
+  background-color: transparent;
+  color: $brown;
+  cursor: pointer;
 
-  &::after {
-    display: none;
+  &:focus {
+    outline: 2px solid $brown;
+  }
+
+  &:disabled {
+    opacity: 0.5;
   }
 
 }
 
 .carousel__button-prev {
-  left: 0;
+  position: absolute;
+  left: 7px;
+  color: inherit;
 
   &::before {
     position: absolute;
@@ -39,10 +45,41 @@
     width: 30px;
     height: 10px;
     left: 0;
-    top: 0;
-    background-image: url("../img/icon-left-flash.svg");
-    background-repeat: no-repeat;
-    background-position: 0 0;
+    top: 5px;
+    mask-image: url("../img/icon-left-flash.svg");
+    mask-repeat: no-repeat;
+    mask-position: 0 0;
+    background-color: $brown;
+  }
+
+  &:hover {
+    transform: translateX(-5px);
+    transition: all 0.4 ease;
+  }
+
+}
+
+.carousel__button-next {
+  position: absolute;
+  right: 7px;
+  color: inherit;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 20px;
+    right: 0;
+    top: 5px;
+    mask-image: url("../img/icon-right-flash.svg");
+    mask-repeat: no-repeat;
+    mask-position: 0 0;
+    background-color: $brown;
+  }
+
+  &:hover {
+    transform: translateX(5px);
+    transition: all 0.4 ease;
   }
 }
 
@@ -63,11 +100,45 @@
     height: 284px;
   }
 
-
   img {
     width: 270px;
     height: 284px;
     object-fit: cover;
+  }
+
+  figcaption {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+
+  .carousel__price {
+    // display: block;
+    font-weight: 700;
+  }
+}
+
+  @media (max-width: $tablet-max-width) {
+    figure {
+      height: 340px;
+    }
+
+    img {
+      width: 324px;
+      height: 340px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    figure {
+      height: 136px;
+    }
+
+    img {
+      width: 130px;
+      height: 136px;
+    }
   }
 }
 

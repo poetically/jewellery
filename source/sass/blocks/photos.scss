@@ -1,12 +1,10 @@
 .photos {
-  padding-left: 98px;
-  padding-right: 98px;
-  margin: 0 auto;
-  margin-bottom: 130px;
-
-  @media (min-width: $beyond-desktop-width) {
-    width: 1170px;
-  }
+  max-width: 1170px;
+  // width: 100%;
+  padding: 0 60px;
+  // padding-left: 98px;
+  // padding-right: 98px;
+  margin: 0 auto 130px;
 
   @media (max-width: $tablet-max-width) {
     padding-left: 45px;
@@ -196,7 +194,7 @@
 
 .photos__photo-wrapper--five {
   max-width: 218px;
-  width: 19.5%;
+  width: 18%;
   height: 191px;
 
   img {
