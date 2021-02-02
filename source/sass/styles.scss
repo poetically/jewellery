@@ -1,12 +1,12 @@
 @import "normalize.scss";
-@import "swiper.scss";
 @import "font.scss";
 @import "variables.scss";
 @import "general.scss";
 @import "blocks/visually-hidden.scss";
+@import "blocks/overlay.scss";
+@import "blocks/swiper.scss";
 @import "blocks/title.scss";
 @import "blocks/subtitle-link.scss";
-// @import "blocks/slick.scss";
 @import "blocks/search.scss";
 @import "blocks/page-header.scss";
 @import "blocks/page-main.scss";
@@ -18,5 +18,6 @@
 @import "blocks/photos.scss";
 @import "blocks/faq.scss";
 @import "blocks/accordion.scss";
-// @import "test.scss";
-// @import "retest.scss";
+@import "blocks/catalog-main.scss";
+@import "blocks/filter.scss";
+@import "blocks/catalog.scss";

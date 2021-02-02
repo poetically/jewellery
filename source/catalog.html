@@ -49,7 +49,353 @@
       </div>
       <a class="page-header__login page-header__login--bottom" href="login.html">Login</a>
     </header>
-    <main>
+    <main class="catalog-main">
+      <div class="catalog-main__wrapper">
+        <h1 class="catalog-main__title">All jewellery</h1>
+        <p class="catalog-main__subtitle">Discover picks of fashion's finest trends in our jewellery catalog</p>
+      </div>
+      <section class="filter">
+        <h2 class="visually-hidden">Product filter</h2>
+        <div class="filter__wrapper">
+          <form action="#" method="get">
+          </form>
+          <div class="filter-item">
+            <div class="filter-item__control">
+              <h3>Product</h2>
+            </div>
+            <div class="filter-item__panel">
+              <div class="filter__input-wrapper">
+                <input type="checkbox" id="necklaces-id">
+                <label for="necklaces-id">Necklaces</label>
+              </div>
+              <div class="filter__input-wrapper">
+                <input type="checkbox" id="chockers-id">
+                <label for="chockers-id">Chockers</label>
+              </div>
+              <div class="filter__input-wrapper">
+                <input type="checkbox" id="rings-id">
+                <label for="rings-id">Rings</label>
+              </div>
+              <div class="filter__input-wrapper">
+                <input type="checkbox" id="earrings-id">
+                <label for="earrings-id">Earrings</label>
+              </div>
+            </div>
+            <div class="filter-item">
+              <div class="filter-item__control">
+                <h3>Material</h3>
+              </div>
+              <div class="filter-item__panel">
+                <div class="filter__input-wrapper">
+                  <input type="checkbox" id="gold-id">
+                  <label for="gold-id">Gold</label>
+                </div>
+                <div class="filter__input-wrapper">
+                  <input type="checkbox" id="silver-id">
+                  <label for="silver-id">Silver</label>
+                </div>
+              </div>
+            </div>
+            <div class="filter-item">
+              <div class="filter-item__control">
+                <h3>Collection</h3>
+              </div>
+              <div class="filter-item__panel">
+                <div class="filter__input-wrapper">
+                  <input type="checkbox" id="pink-flamingo-id">
+                  <label for="pink-flamingo-id">Pink-flamingo</label>
+                </div>
+                <div class="filter__input-wrapper">
+                  <input type="checkbox" id="dreams-id">
+                  <label for="dreams-id">Dreams</label>
+                </div>
+              </div>
+            </div>
+            <div class="filter-item">
+              <div class="filter-item__control">
+                <h3>Price</h3>
+              </div>
+              <div class="filter-item__panel">
+
+              </div>
+            </div>
+
+            <button type="submit">Apply</button>
+            <button type="reset">Clear all</button>
+            <a href="#">Filter</a>
+          </div>
+        </div>
+      </section>
+      <section class="catalog">
+        <h2 class="visually-hidden">Product catalog</h2>
+        <ul class="catalog__list">
+          <li class="catalog__item">
+            <figure>
+              <picture>
+                <!-- 1х: 230; 2x: 460px -->
+                <!-- <source media="(min-width: 1024px)" srcset="img/catalog/double-pearl-earrings-desktop.webp 1x, img/catalog/double-pearl-earrings-desktop@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 309px; 2x: 618px -->
+                <!-- <source media="(min-width: 601px)" srcset="img/catalog/double-pearl-earrings-tablet.webp 1x, img/catalog/double-pearl-earrings-tablet@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 270px; 2x: 540px -->
+                <!-- <source media="(min-width: 320px)" srcset="img/catalog/double-pearl-earrings-mobile.webp 1x, img/catalog/double-pearl-earrings-mobile@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 285px; 2x: 570px -->
+                <source media="(min-width: 1024px)" srcset="img/catalog/double-pearl-earrings-desktop.jpg 1x, img/catalog/double-pearl-earrings-desktop@2x.jpg 2x">
+                <!-- 1х: 309px; 2x: 618px -->
+                <source media="(min-width: 601px)" srcset="img/catalog/double-pearl-earrings-tablet.jpg 1x, img/catalog/double-pearl-earrings-tablet@2x.jpg 2x">
+                <!-- 1х: 290px; 2x: 580px -->
+                <img src="img/catalog/double-pearl-earrings-mobile.jpg" srcset="img/catalog/double-pearl-earrings-mobile@2x.jpg 2x" width="130" height="136" alt="">
+              </picture>
+            </figure>
+            <figcaption>
+              <p>Double pearl earrings</p>
+              <p><b>$ 115</b></p>
+            </figcaption>
+          </li>
+          <li class="catalog__item">
+            <figure>
+              <picture>
+                <!-- 1х: 230; 2x: 460px -->
+                <!-- <source media="(min-width: 1024px)" srcset="img/catalog/choker-gold-bead-desktop.webp 1x, img/catalog/choker-gold-bead-desktop@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 309px; 2x: 618px -->
+                <!-- <source media="(min-width: 601px)" srcset="img/catalog/choker-gold-bead-tablet.webp 1x, img/catalog/choker-gold-bead-tablet@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 270px; 2x: 540px -->
+                <!-- <source media="(min-width: 320px)" srcset="img/catalog/choker-gold-bead-mobile.webp 1x, img/catalog/choker-gold-bead-mobile@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 285px; 2x: 570px -->
+                <source media="(min-width: 1024px)" srcset="img/catalog/choker-gold-bead-desktop.jpg 1x, img/catalog/choker-gold-bead-desktop@2x.jpg 2x">
+                <!-- 1х: 309px; 2x: 618px -->
+                <source media="(min-width: 601px)" srcset="img/catalog/choker-gold-bead-tablet.jpg 1x, img/catalog/choker-gold-bead-tablet@2x.jpg 2x">
+                <!-- 1х: 290px; 2x: 580px -->
+                <img src="img/catalog/choker-gold-bead-mobile.jpg" srcset="img/catalog/choker-gold-bead-mobile@2x.jpg 2x" width="130" height="136" alt="">
+              </picture>
+            </figure>
+            <figcaption>
+              <p>Choker with gold bead</p>
+              <p><b>$ 55</b></p>
+            </figcaption>
+          </li>
+          <li class="catalog__item">
+            <figure>
+              <picture>
+                <!-- 1х: 230; 2x: 460px -->
+                <!-- <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.webp 1x, img/necklace-with-amethyst-slider-desktop@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 309px; 2x: 618px -->
+                <!-- <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.webp 1x, img/necklace-with-amethyst-slider-tablet@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 270px; 2x: 540px -->
+                <!-- <source media="(min-width: 320px)" srcset="img/necklace-with-amethyst-slider-mobile.webp 1x, img/necklace-with-amethyst-slider-mobile@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 285px; 2x: 570px -->
+                <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.jpg 1x, img/necklace-with-amethyst-slider-desktop@2x.jpg 2x">
+                <!-- 1х: 309px; 2x: 618px -->
+                <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.jpg 1x, img/necklace-with-amethyst-slider-tablet@2x.jpg 2x">
+                <!-- 1х: 290px; 2x: 580px -->
+                <img src="img/necklace-with-amethyst-slider-mobile.jpg" srcset="img/necklace-with-amethyst-slider-mobile@2x.jpg 2x" width="130" height="136" alt="">
+              </picture>
+            </figure>
+            <figcaption>
+              <p>Necklace with amethyst</p>
+              <p><b>$ 145</b></p>
+            </figcaption>
+          </li>
+          <li class="catalog__item">
+            <figure>
+              <picture>
+                <!-- 1х: 230; 2x: 460px -->
+                <!-- <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.webp 1x, img/necklace-with-amethyst-slider-desktop@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 309px; 2x: 618px -->
+                <!-- <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.webp 1x, img/necklace-with-amethyst-slider-tablet@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 270px; 2x: 540px -->
+                <!-- <source media="(min-width: 320px)" srcset="img/necklace-with-amethyst-slider-mobile.webp 1x, img/necklace-with-amethyst-slider-mobile@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 285px; 2x: 570px -->
+                <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.jpg 1x, img/necklace-with-amethyst-slider-desktop@2x.jpg 2x">
+                <!-- 1х: 309px; 2x: 618px -->
+                <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.jpg 1x, img/necklace-with-amethyst-slider-tablet@2x.jpg 2x">
+                <!-- 1х: 290px; 2x: 580px -->
+                <img src="img/necklace-with-amethyst-slider-mobile.jpg" srcset="img/necklace-with-amethyst-slider-mobile@2x.jpg 2x" width="130" height="136" alt="">
+              </picture>
+            </figure>
+            <figcaption>
+              <p>Necklace with amethyst</p>
+              <p><b>$ 145</b></p>
+            </figcaption>
+          </li>
+          <li class="catalog__item">
+            <figure>
+              <picture>
+                <!-- 1х: 230; 2x: 460px -->
+                <!-- <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.webp 1x, img/necklace-with-amethyst-slider-desktop@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 309px; 2x: 618px -->
+                <!-- <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.webp 1x, img/necklace-with-amethyst-slider-tablet@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 270px; 2x: 540px -->
+                <!-- <source media="(min-width: 320px)" srcset="img/necklace-with-amethyst-slider-mobile.webp 1x, img/necklace-with-amethyst-slider-mobile@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 285px; 2x: 570px -->
+                <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.jpg 1x, img/necklace-with-amethyst-slider-desktop@2x.jpg 2x">
+                <!-- 1х: 309px; 2x: 618px -->
+                <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.jpg 1x, img/necklace-with-amethyst-slider-tablet@2x.jpg 2x">
+                <!-- 1х: 290px; 2x: 580px -->
+                <img src="img/necklace-with-amethyst-slider-mobile.jpg" srcset="img/necklace-with-amethyst-slider-mobile@2x.jpg 2x" width="130" height="136" alt="">
+              </picture>
+            </figure>
+            <figcaption>
+              <p>Necklace with amethyst</p>
+              <p><b>$ 145</b></p>
+            </figcaption>
+          </li>
+          <li class="catalog__item">
+            <figure>
+              <picture>
+                <!-- 1х: 230; 2x: 460px -->
+                <!-- <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.webp 1x, img/necklace-with-amethyst-slider-desktop@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 309px; 2x: 618px -->
+                <!-- <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.webp 1x, img/necklace-with-amethyst-slider-tablet@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 270px; 2x: 540px -->
+                <!-- <source media="(min-width: 320px)" srcset="img/necklace-with-amethyst-slider-mobile.webp 1x, img/necklace-with-amethyst-slider-mobile@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 285px; 2x: 570px -->
+                <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.jpg 1x, img/necklace-with-amethyst-slider-desktop@2x.jpg 2x">
+                <!-- 1х: 309px; 2x: 618px -->
+                <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.jpg 1x, img/necklace-with-amethyst-slider-tablet@2x.jpg 2x">
+                <!-- 1х: 290px; 2x: 580px -->
+                <img src="img/necklace-with-amethyst-slider-mobile.jpg" srcset="img/necklace-with-amethyst-slider-mobile@2x.jpg 2x" width="130" height="136" alt="">
+              </picture>
+            </figure>
+            <figcaption>
+              <p>Necklace with amethyst</p>
+              <p><b>$ 145</b></p>
+            </figcaption>
+          </li>
+          <li class="catalog__item">
+            <figure>
+              <picture>
+                <!-- 1х: 230; 2x: 460px -->
+                <!-- <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.webp 1x, img/necklace-with-amethyst-slider-desktop@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 309px; 2x: 618px -->
+                <!-- <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.webp 1x, img/necklace-with-amethyst-slider-tablet@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 270px; 2x: 540px -->
+                <!-- <source media="(min-width: 320px)" srcset="img/necklace-with-amethyst-slider-mobile.webp 1x, img/necklace-with-amethyst-slider-mobile@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 285px; 2x: 570px -->
+                <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.jpg 1x, img/necklace-with-amethyst-slider-desktop@2x.jpg 2x">
+                <!-- 1х: 309px; 2x: 618px -->
+                <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.jpg 1x, img/necklace-with-amethyst-slider-tablet@2x.jpg 2x">
+                <!-- 1х: 290px; 2x: 580px -->
+                <img src="img/necklace-with-amethyst-slider-mobile.jpg" srcset="img/necklace-with-amethyst-slider-mobile@2x.jpg 2x" width="130" height="136" alt="">
+              </picture>
+            </figure>
+            <figcaption>
+              <p>Necklace with amethyst</p>
+              <p><b>$ 145</b></p>
+            </figcaption>
+          </li>
+          <li class="catalog__item">
+            <figure>
+              <picture>
+                <!-- 1х: 230; 2x: 460px -->
+                <!-- <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.webp 1x, img/necklace-with-amethyst-slider-desktop@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 309px; 2x: 618px -->
+                <!-- <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.webp 1x, img/necklace-with-amethyst-slider-tablet@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 270px; 2x: 540px -->
+                <!-- <source media="(min-width: 320px)" srcset="img/necklace-with-amethyst-slider-mobile.webp 1x, img/necklace-with-amethyst-slider-mobile@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 285px; 2x: 570px -->
+                <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.jpg 1x, img/necklace-with-amethyst-slider-desktop@2x.jpg 2x">
+                <!-- 1х: 309px; 2x: 618px -->
+                <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.jpg 1x, img/necklace-with-amethyst-slider-tablet@2x.jpg 2x">
+                <!-- 1х: 290px; 2x: 580px -->
+                <img src="img/necklace-with-amethyst-slider-mobile.jpg" srcset="img/necklace-with-amethyst-slider-mobile@2x.jpg 2x" width="130" height="136" alt="">
+              </picture>
+            </figure>
+            <figcaption>
+              <p>Necklace with amethyst</p>
+              <p><b>$ 145</b></p>
+            </figcaption>
+          </li>
+          <li class="catalog__item">
+            <figure>
+              <picture>
+                <!-- 1х: 230; 2x: 460px -->
+                <!-- <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.webp 1x, img/necklace-with-amethyst-slider-desktop@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 309px; 2x: 618px -->
+                <!-- <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.webp 1x, img/necklace-with-amethyst-slider-tablet@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 270px; 2x: 540px -->
+                <!-- <source media="(min-width: 320px)" srcset="img/necklace-with-amethyst-slider-mobile.webp 1x, img/necklace-with-amethyst-slider-mobile@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 285px; 2x: 570px -->
+                <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.jpg 1x, img/necklace-with-amethyst-slider-desktop@2x.jpg 2x">
+                <!-- 1х: 309px; 2x: 618px -->
+                <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.jpg 1x, img/necklace-with-amethyst-slider-tablet@2x.jpg 2x">
+                <!-- 1х: 290px; 2x: 580px -->
+                <img src="img/necklace-with-amethyst-slider-mobile.jpg" srcset="img/necklace-with-amethyst-slider-mobile@2x.jpg 2x" width="130" height="136" alt="">
+              </picture>
+            </figure>
+            <figcaption>
+              <p>Necklace with amethyst</p>
+              <p><b>$ 145</b></p>
+            </figcaption>
+          </li>
+          <li class="catalog__item">
+            <figure>
+              <picture>
+                <!-- 1х: 230; 2x: 460px -->
+                <!-- <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.webp 1x, img/necklace-with-amethyst-slider-desktop@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 309px; 2x: 618px -->
+                <!-- <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.webp 1x, img/necklace-with-amethyst-slider-tablet@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 270px; 2x: 540px -->
+                <!-- <source media="(min-width: 320px)" srcset="img/necklace-with-amethyst-slider-mobile.webp 1x, img/necklace-with-amethyst-slider-mobile@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 285px; 2x: 570px -->
+                <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.jpg 1x, img/necklace-with-amethyst-slider-desktop@2x.jpg 2x">
+                <!-- 1х: 309px; 2x: 618px -->
+                <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.jpg 1x, img/necklace-with-amethyst-slider-tablet@2x.jpg 2x">
+                <!-- 1х: 290px; 2x: 580px -->
+                <img src="img/necklace-with-amethyst-slider-mobile.jpg" srcset="img/necklace-with-amethyst-slider-mobile@2x.jpg 2x" width="130" height="136" alt="">
+              </picture>
+            </figure>
+            <figcaption>
+              <p>Necklace with amethyst</p>
+              <p><b>$ 145</b></p>
+            </figcaption>
+          </li>
+          <li class="catalog__item">
+            <figure>
+              <picture>
+                <!-- 1х: 230; 2x: 460px -->
+                <!-- <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.webp 1x, img/necklace-with-amethyst-slider-desktop@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 309px; 2x: 618px -->
+                <!-- <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.webp 1x, img/necklace-with-amethyst-slider-tablet@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 270px; 2x: 540px -->
+                <!-- <source media="(min-width: 320px)" srcset="img/necklace-with-amethyst-slider-mobile.webp 1x, img/necklace-with-amethyst-slider-mobile@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 285px; 2x: 570px -->
+                <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.jpg 1x, img/necklace-with-amethyst-slider-desktop@2x.jpg 2x">
+                <!-- 1х: 309px; 2x: 618px -->
+                <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.jpg 1x, img/necklace-with-amethyst-slider-tablet@2x.jpg 2x">
+                <!-- 1х: 290px; 2x: 580px -->
+                <img src="img/necklace-with-amethyst-slider-mobile.jpg" srcset="img/necklace-with-amethyst-slider-mobile@2x.jpg 2x" width="130" height="136" alt="">
+              </picture>
+            </figure>
+            <figcaption>
+              <p>Necklace with amethyst</p>
+              <p><b>$ 145</b></p>
+            </figcaption>
+          </li>
+          <li class="catalog__item">
+            <figure>
+              <picture>
+                <!-- 1х: 230; 2x: 460px -->
+                <!-- <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.webp 1x, img/necklace-with-amethyst-slider-desktop@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 309px; 2x: 618px -->
+                <!-- <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.webp 1x, img/necklace-with-amethyst-slider-tablet@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 270px; 2x: 540px -->
+                <!-- <source media="(min-width: 320px)" srcset="img/necklace-with-amethyst-slider-mobile.webp 1x, img/necklace-with-amethyst-slider-mobile@2x.webp 2x" type="image/webp"> -->
+                <!-- 1х: 285px; 2x: 570px -->
+                <source media="(min-width: 1024px)" srcset="img/necklace-with-amethyst-slider-desktop.jpg 1x, img/necklace-with-amethyst-slider-desktop@2x.jpg 2x">
+                <!-- 1х: 309px; 2x: 618px -->
+                <source media="(min-width: 601px)" srcset="img/necklace-with-amethyst-slider-tablet.jpg 1x, img/necklace-with-amethyst-slider-tablet@2x.jpg 2x">
+                <!-- 1х: 290px; 2x: 580px -->
+                <img src="img/necklace-with-amethyst-slider-mobile.jpg" srcset="img/necklace-with-amethyst-slider-mobile@2x.jpg 2x" width="130" height="136" alt="">
+              </picture>
+            </figure>
+            <figcaption>
+              <p>Necklace with amethyst</p>
+              <p><b>$ 145</b></p>
+            </figcaption>
+          </li>
+
+        </ul>
+      </section>
 
     </main>
     <footer class="page-footer">

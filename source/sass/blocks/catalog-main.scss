@@ -1,0 +1,66 @@
+.catalog-main {
+  display: grid;
+  grid-template-columns: 1fr minmax(200px, 270px) minmax(750px 870px) 1fr;
+
+}
+
+.catalog-main__wrapper {
+  grid-row: 1 / 2;
+  grid-column: 1 / 5;
+  background-image: url("../img/bg-top-catalog-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 261px;
+  background-color: #5f4131;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/bg-top-catalog-desktop@2x.jpg");
+  }
+
+  @media (max-width: $tablet-min-width) {
+    background-image: url("../img/bg-top-catalog-tablet.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-top-catalog-tablet@2x.jpg");
+    }
+  }
+
+  @media (max-width: $mobile-max-width) {
+    // height: 500px;
+  }
+
+  @media (max-width: $mobile-min-width) {
+    background-image: url("../img/bg-top-catalog-mobile.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-top-mobile@2x.jpg");
+    }
+  }
+}
+
+
+.catalog-main__title {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 34px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  padding-top: 102px;
+  text-align: center;
+  margin: 0;
+}
+
+.catalog-main__subtitle {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 130%;
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+}
