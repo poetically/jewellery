@@ -7,16 +7,18 @@
     content: "";
     width: 14px;
     height: 14px;
-    top: 3px;
+    top: 10px;
     left: 0;
     mask-image: url("../img/icon-search.svg");
     background-color: #000000;
   }
 
   input {
+    box-sizing: border-box;
+    padding: 7px 7px;
     width: 220px;
     border: none;
-    padding: 0;
+    border-radius: 0;
   }
 
   input::placeholder {
@@ -48,6 +50,10 @@
     }
 
     input {
+      width: 100%;
+      box-sizing: border-box;
+      background-color: lighten($brown, 15%);
+      color: #ffffff;
       height: 40px;
       border-radius: 21px;
       padding-left: 40px;

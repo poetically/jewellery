@@ -20,7 +20,6 @@
   max-width: 1170px;
   padding-left: 60px;
   padding-right: 60px;
-  margin: 0 auto;
   margin: 0 auto 15px;
   padding-top: 30px;
 
@@ -53,7 +52,7 @@
   // order: -1;
   grid-row-start: 1;
   grid-column: 1 / 2;
-  margin-top: 13px;
+  margin-top: 6px;
 
   @media (max-width: $tablet-max-width) {
     margin-top: 35px;
@@ -61,14 +60,11 @@
   }
 }
 
-.page-header__search input {
-  @media (max-width: $tablet-max-width) {
-    width: 100%;
-    box-sizing: border-box;
-    background-color: lighten($brown, 15%);
-    color: #ffffff;
-  }
-}
+// .page-header__search input {
+//   @media (max-width: $tablet-max-width) {
+
+//   }
+// }
 
 .page-header__login-cart {
   display: flex;

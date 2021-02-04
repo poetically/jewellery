@@ -1,7 +1,17 @@
 .catalog-main {
   display: grid;
-  grid-template-columns: 1fr minmax(200px, 270px) minmax(750px 870px) 1fr;
+  grid-template-columns: 1fr minmax(320px, 1290px) 1fr;
+  position: relative;
 
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 132px;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #f6f5f4;
+  }
 }
 
 .catalog-main__wrapper {
@@ -39,7 +49,6 @@
   }
 }
 
-
 .catalog-main__title {
   font-family: "Cormorant Garamond", "Georgia", serif;
   font-weight: 700;
@@ -63,4 +72,21 @@
   text-align: center;
   color: #ffffff;
   margin: 0;
+}
+
+.catalog-main__filter-catalog {
+  display: grid;
+  grid-template-columns: minmax(250px 1fr) 3fr;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+  padding: 80px 60px;
+
+  @media (max-width: $tablet-max-width) {
+    padding-top: 50px;
+  }
+}
+
+.catalog-main__filter {
+  padding-right: 50px;
 }

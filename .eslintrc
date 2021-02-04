@@ -1,0 +1,19 @@
+// {
+//   "env": {
+//     "es2017": true,
+//     "browser": true
+//   },
+//   "extends": "htmlacademy/vanilla",
+//   "rules": {
+//     // Additional rules...
+//   }
+// }
+{
+  "root": true,
+
+  "env": {
+    "browser": true
+  },
+  "extends": "htmlacademy/es5"
+}
+
