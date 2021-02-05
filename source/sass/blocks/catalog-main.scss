@@ -58,7 +58,7 @@
   line-height: 130%;
   letter-spacing: 0.03em;
   color: #ffffff;
-  padding-top: 102px;
+  padding-top: 92px;
   text-align: center;
   margin: 0;
 }
@@ -76,17 +76,31 @@
 
 .catalog-main__filter-catalog {
   display: grid;
-  grid-template-columns: minmax(250px 1fr) 3fr;
+  grid-template-columns: minmax(220px 250px) 3fr;
+  justify-content: space-between;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 
-  padding: 80px 60px;
+  padding: 80px 60px 75px;
 
   @media (max-width: $tablet-max-width) {
-    padding-top: 50px;
+    display: block;
+    padding: 50px 45px 75px;
   }
 }
 
 .catalog-main__filter {
-  padding-right: 50px;
+  padding-right: 30px;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  min-width: 220px;
+
+  @media (max-width: $tablet-max-width) {
+    padding-right: 0;
+  }
+}
+
+.catalog-main__catalog {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
 }
