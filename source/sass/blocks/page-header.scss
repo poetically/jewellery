@@ -270,127 +270,127 @@
   .page-header__jewellery-types {
     display: none;
   }
-}
 
 
-.page-header--menu-opened {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  color: #ffffff;
-  background-color: $brown;
-  padding-bottom: 75px;
-  z-index: 23;
+  .page-header--menu-opened {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color: #ffffff;
+    background-color: $brown;
+    padding-bottom: 75px;
+    z-index: 23;
 
-  .page-header__menu-button,
-  .page-header__cart::before {
-    background-color: #ffffff;
-  }
+    .page-header__menu-button,
+    .page-header__cart::before {
+      background-color: #ffffff;
+    }
 
-  .page-header__cart:hover::before,
-  .page-header__cart:focus::before,
-  .page-header__menu-button:hover,
-  .page-header__menu-button:focus {
-    background-color: rgba(#ffffff, 0.7);
-  }
+    .page-header__cart:hover::before,
+    .page-header__cart:focus::before,
+    .page-header__menu-button:hover,
+    .page-header__menu-button:focus {
+      background-color: rgba(#ffffff, 0.7);
+    }
 
-  .page-header__cart:active::before,
-  .page-header__menu-button:active {
-    background-color: rgba(#ffffff, 0.5);
-  }
+    .page-header__cart:active::before,
+    .page-header__menu-button:active {
+      background-color: rgba(#ffffff, 0.5);
+    }
 
-  .page-header__logo path {
-    fill: #ffffff;
-  }
+    .page-header__logo path {
+      fill: #ffffff;
+    }
 
-  .page-header__search {
-    display: block;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 4;
-  }
+    .page-header__search {
+      display: block;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
 
-  .page-header__jewellery-types {
-    display: block;
-  }
+    .page-header__jewellery-types {
+      display: block;
+    }
 
 
-  .page-header__about-info {
-    display: flex;
-    flex-direction: column;
-    // padding-left: 40px;
+    .page-header__about-info {
+      display: flex;
+      flex-direction: column;
+      // padding-left: 40px;
 
-    a {
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    .page-header__login--bottom {
+      display: block;
       text-decoration: none;
       color: inherit;
     }
   }
 
-  .page-header__login--bottom {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-  }
-}
+  .page-header--no-js {
+    background-color: $brown;
+    color: #ffffff;
+    padding-bottom: 75px;
 
-.page-header--no-js {
-  background-color: $brown;
-  color: #ffffff;
-  padding-bottom: 75px;
+    .page-header__menu-button {
+      display: none;
+    }
 
-  .page-header__menu-button {
-    display: none;
-  }
+    .page-header__cart::before {
+      background-color: #ffffff;
+    }
 
-  .page-header__cart::before {
-    background-color: #ffffff;
-  }
+    .page-header__cart:hover::before,
+    .page-header__cart:focus::before {
+      background-color: rgba(#1d1613, 0.7);
+    }
 
-  .page-header__cart:hover::before,
-  .page-header__cart:focus::before {
-    background-color: rgba(#1d1613, 0.7);
-  }
+    .page-header__cart:active::before {
+      background-color: rgba(#1d1613, 0.5);
+    }
 
-  .page-header__cart:active::before {
-    background-color: rgba(#1d1613, 0.5);
-  }
+    .page-header__logo path {
+      fill: #ffffff;
+    }
 
-  .page-header__logo path {
-    fill: #ffffff;
-  }
-
-  .page-header__search {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 4;
-  }
+    .page-header__search {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
 
 
-  .page-header__about-info {
-    display: flex;
-    flex-direction: column;
+    .page-header__about-info {
+      display: flex;
+      flex-direction: column;
 
-    a {
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    .page-header__login--bottom {
+      display: block;
       text-decoration: none;
       color: inherit;
+      padding-left: 45px;
     }
   }
 
-  .page-header__login--bottom {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    padding-left: 45px;
-  }
-}
-
-.page-header .page-header__menu-button {
-  @media (max-width: $mobile-max-width) {
-    left: 15px;
+  .page-header .page-header__menu-button {
+    @media (max-width: $mobile-max-width) {
+      left: 15px;
+    }
   }
 }

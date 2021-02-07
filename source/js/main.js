@@ -5,15 +5,16 @@
   var accordionControls = document.querySelectorAll('.accordion__control');
   var accordionPanels = document.querySelectorAll('.accordion__panel');
   var body = document.querySelector('body');
+  var mQueryTablet = window.matchMedia('(max-width: 1023px)');
 
   var modal = document.querySelector('.modal');
-  var modalCloseBtn = modal.querySelector('.modal__close');
+  var modalCloseBtn = document.querySelector('.modal__close');
   var modalOpenBtn = document.querySelector('.modal__open');
   var filterForm = document.querySelector('.filter__form');
 
   // mobile header
 
-  if (pageHeader !== null && menuButton !== null) {
+  if (pageHeader && menuButton) {
     pageHeader.classList.remove('page-header--no-js');
 
     menuButton.addEventListener('click', function () {
@@ -29,6 +30,8 @@
   }
 
   // modal
+
+
 
   /* close the modal */
   var closeModal = function () {
@@ -62,20 +65,27 @@
     closeModal();
   };
 
-  /* show popup */
-  var openModal = function () {
-    body.classList.add('overlay');
-    modal.classList.remove('modal--closed');
-    filterForm.addEventListener('submit', onSubmitCloseModal);
-    modalCloseBtn.addEventListener('click', onClickCloseModal);
-    window.addEventListener('keydown', onEscPressCloseModal);
-    modal.addEventListener('mouseup', onClickOutsideClose);
-  };
 
-  modalOpenBtn.addEventListener('click', function (evt) {
-    evt.preventDefault();
-    openModal();
-  });
+
+  /* show modal */
+
+    var openModal = function () {
+      body.classList.add('overlay');
+      modal.classList.remove('modal--closed');
+      modal.setAttribute('role', 'dialog');
+      filterForm.addEventListener('submit', onSubmitCloseModal);
+      modalCloseBtn.addEventListener('click', onClickCloseModal);
+      window.addEventListener('keydown', onEscPressCloseModal);
+      modal.addEventListener('mouseup', onClickOutsideClose);
+    };
+
+  if (modalOpenBtn && modal && modalCloseBtn) {
+    modalOpenBtn.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      openModal();
+    });
+  }
+
   // accordion
 
   accordionPanels.forEach(function (panel) {
@@ -95,10 +105,12 @@
     panel.style.height = '0';
   };
 
+
   accordionPanels.forEach(function (panel) {
     zeroPadding(panel);
     zeroHeight(panel);
   });
+
 
   var animatePanel = function animatePanel(control) {
     control.addEventListener('click', function () {
@@ -122,38 +134,42 @@
     animatePanel(control);
   });
 
-  // carousel
-  var swiper = new Swiper('.carousel__container', {
-    navigation: {
-      prevEl: '.carousel__button-prev',
-      nextEl: '.carousel__button-next'
-    },
 
-    pagination: {
-      el: '.swiper__pagination',
-      clickable: true,
-      renderBullet: function renderBullet(index, className) {
-        return '<span class="' + className + '">' + (index + 1) + '</span>';
-      }
-    },
-    keyboard: {
-      enabled: true
-    },
-    mousewheel: {
-      sensitivity: 1
-    },
-    watchOverflow: true,
-    spaceBetween: 30,
-    observer: true,
-    breakpoints: {
-      320: {
-        slidesPerView: 2,
-        slidesPerGroup: 2
+  // carousel
+  if (document.querySelector('.carousel__container') !== null) {
+    var swiper = new Swiper('.carousel__container', {
+      navigation: {
+        prevEl: '.carousel__button-prev',
+        nextEl: '.carousel__button-next'
       },
-      1024: {
-        slidesPerView: 4,
-        slidesPerGroup: 4
+
+      pagination: {
+        el: '.swiper__pagination',
+        clickable: true,
+        renderBullet: function renderBullet(index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        }
       },
-    },
-  });
+      keyboard: {
+        enabled: true
+      },
+      mousewheel: {
+        sensitivity: 1
+      },
+      watchOverflow: true,
+      spaceBetween: 30,
+      observer: true,
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          slidesPerGroup: 2
+        },
+        1024: {
+          slidesPerView: 4,
+          slidesPerGroup: 4
+        },
+      },
+    });
+  }
+
 })();

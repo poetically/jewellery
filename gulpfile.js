@@ -19,11 +19,11 @@ const styles = () => {
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(
-        postcss([
-          autoprefixer({
-            grid: true,
-          }),
-        ])
+      postcss([
+        autoprefixer({
+          grid: true,
+        }),
+      ])
     )
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('source/css'))

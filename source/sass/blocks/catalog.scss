@@ -52,6 +52,16 @@
   }
 }
 
+.catalog__item a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}
+
 .catalog__item p {
   margin: 0;
   padding: 0;
