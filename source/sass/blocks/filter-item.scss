@@ -7,6 +7,15 @@
   &:first-child {
     border-top: 1px solid $brown;
   }
+
+  @media (max-width: $tablet-max-width) {
+    border-left: 0;
+    border-right: 0;
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
 }
 
 .filter-item__control {

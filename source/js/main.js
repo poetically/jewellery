@@ -1,16 +1,102 @@
 'use strict';
 (function () {
   var pageHeader = document.querySelector('.page-header');
-  var menuButton = pageHeader.querySelector('.page-header__menu-button');
+  var menuButton = document.querySelector('.page-header__menu-button');
   var accordionControls = document.querySelectorAll('.accordion__control');
   var accordionPanels = document.querySelectorAll('.accordion__panel');
   var body = document.querySelector('body');
-  var mQueryTablet = window.matchMedia('(max-width: 1023px)');
 
-  var modal = document.querySelector('.modal');
-  var modalCloseBtn = document.querySelector('.modal__close');
-  var modalOpenBtn = document.querySelector('.modal__open');
+  var filterModal = document.querySelector('.filter__wrapper');
+  var filterClose = document.querySelector('.filter__close');
+  var filterOpen = document.querySelector('.filter__open');
   var filterForm = document.querySelector('.filter__form');
+
+  var loginModal = document.querySelector('.login--modal');
+  var loginPage = document.querySelector('.login--page');
+  var loginClose = document.querySelector('.login__close');
+  var loginOpenLinks = document.querySelectorAll('.login-open');
+  var loginForm = document.querySelector('.login__form');
+  var loginEmail = document.querySelector('input[name=email]');
+  var loginPswd = document.querySelector('input[name=pswd]');
+
+
+  var modal;
+  var modalCloseBtn;
+  // var storageEmail;
+
+  // read and write localStorage
+
+  var userEmail = {
+    domElement: loginEmail,
+    content: null,
+    nameInStorage: 'email',
+    storageFlag: false
+  };
+
+  // var verifyStorage = function (element) {
+  //   var memorized = localStorage.getItem(element.nameInStorage);
+  //   if (memorized !== null) {
+  //     element.storageFlag = true;
+  //     element.content = memorized;
+  //   }
+  // };
+
+  // verifyStorage(userEmail);
+
+  var verifyAndAddEmail  = function () {
+    var memorized = localStorage.getItem(loginEmail.getAttribute('name'));
+    if (memorized !== null) {
+      loginEmail.value = memorized;
+    }
+  };
+
+  // var addDataToForm = function () {
+  //   if (userEmail.storageFlag) {
+  //     var nodeElement = userEmail.domElement;
+  //     nodeElement.value = userEmail.content;
+  //   }
+  // };
+
+  // var onSubmitStoreData = function () {
+  //   var nodeElement = userEmail.domElement;
+  //   if (nodeElement.value) {
+  //     localStorage.setItem(userEmail.nameInStorage, nodeElement.value);
+  //   }
+  // };
+
+  var OnSubmitStoreEmail = function () {
+    if (loginEmail.value) {
+      localStorage.setItem(loginEmail.getAttribute('name'), loginEmail.value);
+    }
+  };
+
+  // var onSubmitStoreDataCloseModal = function () {
+  //   var nodeElement = userEmail.domElement;
+  //   if (nodeElement.value) {
+  //     localStorage.setItem(userEmail.nameInStorage, nodeElement.value);
+  //   }
+  //   closeModal();
+  // };
+
+  var onSubmitStoreEmailCloseModal = function () {
+    if (loginEmail.value) {
+      localStorage.setItem(loginEmail.getAttribute('name'), loginEmail.value);
+    }
+    closeModal();
+  };
+
+  // set focus
+
+  var setFocus = function () {
+    if (loginEmail.value !== '') {
+      loginPswd.focus();
+    }
+    // } else if (loginPswd.value !== '') {
+    //   phones[1].focus();
+    // }  else if (messages[1].value === '') {
+    //   messages[1].focus();
+    // }
+  };
 
   // mobile header
 
@@ -30,8 +116,6 @@
   }
 
   // modal
-
-
 
   /* close the modal */
   var closeModal = function () {
@@ -65,24 +149,50 @@
     closeModal();
   };
 
-
-
   /* show modal */
 
-    var openModal = function () {
-      body.classList.add('overlay');
-      modal.classList.remove('modal--closed');
-      modal.setAttribute('role', 'dialog');
-      filterForm.addEventListener('submit', onSubmitCloseModal);
-      modalCloseBtn.addEventListener('click', onClickCloseModal);
-      window.addEventListener('keydown', onEscPressCloseModal);
-      modal.addEventListener('mouseup', onClickOutsideClose);
-    };
+  var openModal = function () {
+    body.classList.add('overlay');
+    modal.classList.remove('modal--closed');
+    verifyAndAddEmail();
+    setFocus();
+    // modal.setAttribute('role', 'dialog');
+    modalCloseBtn.addEventListener('click', onClickCloseModal);
+    window.addEventListener('keydown', onEscPressCloseModal);
+    modal.addEventListener('mouseup', onClickOutsideClose);
+  };
 
-  if (modalOpenBtn && modal && modalCloseBtn) {
-    modalOpenBtn.addEventListener('click', function (evt) {
-      evt.preventDefault();
-      openModal();
+  // show filter modal
+
+  if (filterOpen && filterModal && filterClose && filterForm) {
+    filterOpen.addEventListener('click', function () {
+      modal = filterModal;
+      modalCloseBtn = filterClose;
+      openModal(filterModal, filterClose);
+      filterForm.addEventListener('submit', onSubmitCloseModal);
+    });
+  }
+
+  // show login modal
+
+  if (loginOpenLinks && loginModal && loginClose && loginForm && loginEmail) {
+    loginOpenLinks.forEach(function (link) {
+      link.addEventListener('click', function (evt) {
+        modal = loginModal;
+        modalCloseBtn = loginClose;
+        evt.preventDefault();
+        openModal(loginModal, loginClose);
+        // loginForm.addEventListener('submit', onSubmitStoreDataCloseModal);
+        loginForm.addEventListener('submit', onSubmitStoreEmailCloseModal);
+      });
+    });
+  }
+
+  if (loginPage) {
+    window.addEventListener('load', function () {
+      verifyAndAddEmail();
+      setFocus();
+      loginForm.addEventListener('submit', OnSubmitStoreEmail);
     });
   }
 
@@ -142,14 +252,6 @@
         prevEl: '.carousel__button-prev',
         nextEl: '.carousel__button-next'
       },
-
-      pagination: {
-        el: '.swiper__pagination',
-        clickable: true,
-        renderBullet: function renderBullet(index, className) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
-        }
-      },
       keyboard: {
         enabled: true
       },
@@ -162,11 +264,51 @@
       breakpoints: {
         320: {
           slidesPerView: 2,
-          slidesPerGroup: 2
+          slidesPerGroup: 2,
+          pagination: {
+            el: '.swiper__pagination',
+            clicable: true,
+            type: 'fraction',
+            renderFraction: function (currentClass, totalClass) {
+              return '<span class="' + currentClass + '"></span>' + ' of ' + '<span class="' + totalClass + '"></span>';
+            },
+          },
         },
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          pagination: {
+            el: '.swiper__pagination',
+            clickable: true,
+            type: 'bullets',
+            renderBullet: function renderBullet(index, className) {
+              return '<span class="' + className + '">' + (index + 1) + '</span>';
+            },
+          },
+        },
+        // 990: {
+        //   slidesPerView: 3,
+        //   slidesPerGroup: 3,
+        //   pagination: {
+        //     el: '.swiper__pagination',
+        //     clickable: true,
+        //     type: 'bullets',
+        //     renderBullet: function renderBullet(index, className) {
+        //       return '<span class="' + className + '">' + (index + 1) + '</span>';
+        //     },
+        //   },
+        // },
         1024: {
           slidesPerView: 4,
-          slidesPerGroup: 4
+          slidesPerGroup: 4,
+          pagination: {
+            el: '.swiper__pagination',
+            clickable: true,
+            type: 'bullets',
+            renderBullet: function renderBullet(index, className) {
+              return '<span class="' + className + '">' + (index + 1) + '</span>';
+            },
+          },
         },
       },
     });

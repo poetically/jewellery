@@ -15,10 +15,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1170px;
+  // width: 100%;
   padding-left: 60px;
   padding-right: 60px;
-  // padding-left: 98px;
-  // padding-right: 98px;
   margin: 0 auto;
 
   @media (min-width: $beyond-desktop-width) {
@@ -28,9 +27,10 @@
 
   @media (max-width: $tablet-max-width) {
     justify-content: start;
+    max-width: 678px;
     padding-left: 45px;
     padding-right: 45px;
-    margin: 0;
+    // margin: 0;
   }
 
   @media (max-width: $mobile-max-width) {

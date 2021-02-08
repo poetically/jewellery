@@ -1,0 +1,10 @@
+.article {
+  display: grid;
+  grid-template-columns: minmax(500px 600px) minmax(300px 1fr);
+  grid-gap: 40px;
+}
+
+.article__text {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}

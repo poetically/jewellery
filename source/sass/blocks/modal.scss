@@ -29,10 +29,10 @@
 
     .modal__inner {
       position: relative;
-      width: 458px;
+      width: 440px;
       box-sizing: border-box;
-      padding: 40px;
       margin-top: 30px;
+      padding-bottom: 40px;
       background-color: #ffffff;
       box-shadow: 0 5px 32px rgba(219, 213, 208, 0.24);
       z-index: 5;
@@ -41,32 +41,85 @@
     .modal__close {
       position: absolute;
       display: block;
-      content: "";
+      // content: "";
       top: 20px;
-      right: 20px;
-      width: 17px;
-      height: 17px;
+      right: calc((100% - 455px) / 2);
+      width: 32px;
+      height: 32px;
       border: none;
-      background-image: url("../img/icon-close-filter.svg");
+      background-image: url("../img/icon-filter-close.svg");
       background-position: 0 0;
       background-repeat: no-repeat;
       background-color: transparent;
+      z-index: 6;
       cursor: pointer;
 
       &:hover,
       &:focus {
-        opacity: 0.5;
+        opacity: 0.9;
       }
 
       &:active {
-        opacity: 0.3;
+        opacity: 0.8;
       }
     }
 
     .modal--closed {
-      // display: none;
-      opacity: 0;
       visibility: hidden;
     }
   }
 }
+
+.login {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  .modal__inner {
+    position: relative;
+    width: 430px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    padding: 200px 45px 60px;
+    background-color: #f0eae4;
+    z-index: 5;
+  }
+
+  .modal__close {
+    position: absolute;
+    display: block;
+    // content: "";
+    top: 20px;
+    right: 20px;
+    width: 14px;
+    height: 14px;
+    border: none;
+    background-image: url("../img/icon-login-close.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    z-index: 6;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      opacity: 0.9;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}
+
+.login.modal--closed {
+  display: none;
+}
+

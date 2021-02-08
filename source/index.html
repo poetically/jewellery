@@ -28,7 +28,7 @@
           </div>
         </form>
         <div class="page-header__login-cart">
-          <a class="page-header__login page-header__login--top" href="login.html">Login</a>
+          <a class="page-header__login page-header__login--top login-open" href="login.html">Login</a>
           <a class="page-header__cart" href="#"><span>Cart 0</span></a>
         </div>
       </div>
@@ -48,7 +48,7 @@
         <a class="page-header__stores" href="#">Stores & Hours</a>
         <a class="page-header__contact" href="#">Contact Us</a>
       </div>
-      <a class="page-header__login page-header__login--bottom" href="login.html">Login</a>
+      <a class="page-header__login page-header__login--bottom login-open" href="login.html">Login</a>
     </header>
     <main class="page-main">
       <h1 class="visually-hidden">General information about C H jewellery : news, blogs, faq.</h1>
@@ -558,6 +558,22 @@
             </picture>
           </div>
         </div>
+      </section>
+      <section class="login login--modal modal modal--closed">
+        <div class="login__inner modal__inner">
+          <h2 class="login__title">Log in</h2>
+          <form class="login__form" action="#" method="get">
+            <label for="email-id">Enter your e-mail</label>
+            <input type="email" name="email" id="email-id" placeholder="Your e-mail" required>
+            <label for="pswd-id">Your password</label>
+            <input type="text" name="pswd" id="pswd-id" placeholder="Password" required>
+            <a class="login__forgotten" href="#">Forgot your password?</a>
+            <button type="submit">Log in</button>
+            <p class="login__sign-up">Don't have an account? <a href="#">Sing up</a></p>
+          </form>
+          <button class="login__close modal__close" type="button" title="close popup"></button>
+        </div>
+
       </section>
     </main>
     <footer class="page-footer">

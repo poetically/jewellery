@@ -85,6 +85,9 @@
 
   @media (max-width: $tablet-max-width) {
     display: block;
+    max-width: 678px;
+    width: 100%;
+    margin: 0 auto;
     padding: 50px 45px 75px;
   }
 }

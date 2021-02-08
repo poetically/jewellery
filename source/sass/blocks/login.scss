@@ -1,0 +1,137 @@
+.login__inner {
+  width: 430px;
+  box-sizing: border-box;
+  margin-top: 30px auto 0;
+  padding: 200px 45px 60px;
+  background-color: #f0eae4;
+  background-image: url("../img/bg-login-desktop.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/bg-login-desktop@2x.jpg");
+  }
+
+  @media (max-width: $tablet-min-width) {
+    background-image: url("../img/bg-login-tablet.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-login-tablet@2x.jpg");
+    }
+  }
+
+  @media (max-width: $mobile-min-width) {
+    background-image: url("../img/bg-login-mobile.jpg");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-login-mobile@2x.jpg");
+    }
+  }
+}
+
+.login__title {
+  font-family: "Cormorant Garamond", "Georgia", serif;
+  font-size: 34px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid #1d1613;
+    background-color: #f0eae4;
+    padding: 10px 3px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 35px;
+    }
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      color: #9b9997;
+      opacity: 1;
+    }
+
+    &:hover::placeholder,
+    &:focus::placeholder {
+      color: $text-basic;
+    }
+  }
+}
+
+.login__forgotten {
+  width: 150px;
+  align-self: flex-end;
+  text-align: right;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #9b9997;
+  margin-bottom: 40px;
+
+  &:hover,
+  &:focus {
+    color: $text-basic;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: #000000;
+  }
+}
+
+.login button[type="submit"] {
+  display: block;
+  padding: 25px 20px;
+  border: none;
+  background-color: $brown;
+  color: #ffffff;
+  font-family: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.login__sign-up {
+  align-self: center;
+  color: #9b9997;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+
+  a {
+    text-decoration: none;
+    color: $text-basic;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

@@ -22,6 +22,11 @@
   &:active {
     background-color: rgba($brown, 0.3);
   }
+
+  @media (max-width: $tablet-max-width) {
+    width: 362px;
+    margin: 25px auto 0;
+  }
 }
 
 .filter__form button[type="submit"] {
@@ -39,6 +44,11 @@
 
   &:active {
     opacity: 0.8;
+  }
+
+  @media (max-width: $tablet-max-width) {
+    width: 362px;
+    margin: 35px auto 0;
   }
 }
 

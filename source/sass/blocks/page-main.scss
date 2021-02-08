@@ -15,24 +15,12 @@
     background-image: url("../img/bg-top-desktop@2x.jpg");
   }
 
-  // @media (min-width: $beyond-desktop-width) {
-  //   background-position: center;
-  // }
-
-  @media (max-width: $tablet-max-width) {
-    // height: 638px;
-  }
-
   @media (max-width: $tablet-min-width) {
     background-image: url("../img/bg-top-tablet.jpg");
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/bg-top-tablet@2x.jpg");
     }
-  }
-
-  @media (max-width: $mobile-max-width) {
-    // height: 500px;
   }
 
   @media (max-width: $mobile-min-width) {
