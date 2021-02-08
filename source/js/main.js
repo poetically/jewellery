@@ -19,64 +19,28 @@
   var loginEmail = document.querySelector('input[name=email]');
   var loginPswd = document.querySelector('input[name=pswd]');
 
+  var addedModal = document.querySelector('.added--modal');
+  var addedPage = document.querySelector('.added--page');
+  var addedClose = document.querySelector('.added__close');
+  var addedOpenLink = document.querySelector('.article__addlink');
+
 
   var modal;
   var modalCloseBtn;
-  // var storageEmail;
 
-  // read and write localStorage
 
-  var userEmail = {
-    domElement: loginEmail,
-    content: null,
-    nameInStorage: 'email',
-    storageFlag: false
-  };
-
-  // var verifyStorage = function (element) {
-  //   var memorized = localStorage.getItem(element.nameInStorage);
-  //   if (memorized !== null) {
-  //     element.storageFlag = true;
-  //     element.content = memorized;
-  //   }
-  // };
-
-  // verifyStorage(userEmail);
-
-  var verifyAndAddEmail  = function () {
+  var verifyAndAddEmail = function () {
     var memorized = localStorage.getItem(loginEmail.getAttribute('name'));
     if (memorized !== null) {
       loginEmail.value = memorized;
     }
   };
 
-  // var addDataToForm = function () {
-  //   if (userEmail.storageFlag) {
-  //     var nodeElement = userEmail.domElement;
-  //     nodeElement.value = userEmail.content;
-  //   }
-  // };
-
-  // var onSubmitStoreData = function () {
-  //   var nodeElement = userEmail.domElement;
-  //   if (nodeElement.value) {
-  //     localStorage.setItem(userEmail.nameInStorage, nodeElement.value);
-  //   }
-  // };
-
   var OnSubmitStoreEmail = function () {
     if (loginEmail.value) {
       localStorage.setItem(loginEmail.getAttribute('name'), loginEmail.value);
     }
   };
-
-  // var onSubmitStoreDataCloseModal = function () {
-  //   var nodeElement = userEmail.domElement;
-  //   if (nodeElement.value) {
-  //     localStorage.setItem(userEmail.nameInStorage, nodeElement.value);
-  //   }
-  //   closeModal();
-  // };
 
   var onSubmitStoreEmailCloseModal = function () {
     if (loginEmail.value) {
@@ -91,33 +55,31 @@
     if (loginEmail.value !== '') {
       loginPswd.focus();
     }
-    // } else if (loginPswd.value !== '') {
-    //   phones[1].focus();
-    // }  else if (messages[1].value === '') {
-    //   messages[1].focus();
-    // }
   };
 
   // mobile header
 
+  var toggleMenu = function () {
+    var expanded = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', !expanded);
+    pageHeader.classList.toggle('page-header--menu-opened');
+    if (!expanded) {
+      body.classList.add('overlay');
+    } else {
+      body.classList.remove('overlay');
+    }
+  };
+
   if (pageHeader && menuButton) {
     pageHeader.classList.remove('page-header--no-js');
-
     menuButton.addEventListener('click', function () {
-      var expanded = menuButton.getAttribute('aria-expanded') === 'true';
-      menuButton.setAttribute('aria-expanded', !expanded);
-      pageHeader.classList.toggle('page-header--menu-opened');
-      if (!expanded) {
-        body.classList.add('overlay');
-      } else {
-        body.classList.remove('overlay');
-      }
+      toggleMenu();
     });
   }
 
   // modal
 
-  /* close the modal */
+  /* close modal */
   var closeModal = function () {
     body.classList.remove('overlay');
     modal.classList.add('modal--closed');
@@ -129,7 +91,7 @@
     closeModal();
   };
 
-  /* close the modal on esc */
+  /* close modal on esc */
 
   var onEscPressCloseModal = function (evt) {
     if (evt.keyCode === 27) {
@@ -154,8 +116,6 @@
   var openModal = function () {
     body.classList.add('overlay');
     modal.classList.remove('modal--closed');
-    verifyAndAddEmail();
-    setFocus();
     // modal.setAttribute('role', 'dialog');
     modalCloseBtn.addEventListener('click', onClickCloseModal);
     window.addEventListener('keydown', onEscPressCloseModal);
@@ -168,31 +128,54 @@
     filterOpen.addEventListener('click', function () {
       modal = filterModal;
       modalCloseBtn = filterClose;
-      openModal(filterModal, filterClose);
+      openModal();
       filterForm.addEventListener('submit', onSubmitCloseModal);
     });
   }
+
+  var closeMenuIfOpened = function () {
+    if (pageHeader && pageHeader.classList.contains('page-header--menu-opened')) {
+      pageHeader.classList.remove('page-header--menu-opened');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }
+  };
 
   // show login modal
 
   if (loginOpenLinks && loginModal && loginClose && loginForm && loginEmail) {
     loginOpenLinks.forEach(function (link) {
       link.addEventListener('click', function (evt) {
+        closeMenuIfOpened();
+        evt.preventDefault();
         modal = loginModal;
         modalCloseBtn = loginClose;
-        evt.preventDefault();
-        openModal(loginModal, loginClose);
+        openModal();
+        verifyAndAddEmail();
+        setFocus();
         // loginForm.addEventListener('submit', onSubmitStoreDataCloseModal);
         loginForm.addEventListener('submit', onSubmitStoreEmailCloseModal);
       });
     });
   }
 
+  // localStorage on login page
+
   if (loginPage) {
     window.addEventListener('load', function () {
       verifyAndAddEmail();
       setFocus();
       loginForm.addEventListener('submit', OnSubmitStoreEmail);
+    });
+  }
+
+  // show 'add to cart' modal
+
+  if (addedOpenLink && addedModal && addedClose) {
+    addedOpenLink.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      modal = addedModal;
+      modalCloseBtn = addedClose;
+      openModal();
     });
   }
 

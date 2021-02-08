@@ -162,12 +162,12 @@
   scroll-snap-type: y mandatory;
 }
 
-:root {
-  --swiper-navigation-size: 44px;
-  /*
-  --swiper-navigation-color: var(--swiper-theme-color);
-  */
-}
+// :root {
+//   --swiper-navigation-size: 44px;
+//   /*
+//   --swiper-navigation-color: var(--swiper-theme-color);
+//   */
+// }
 
 .swiper__button-prev,
 .swiper__button-next {
@@ -191,16 +191,16 @@
   pointer-events: none;
 }
 
-.swiper__button-prev::after,
-.swiper__button-next::after {
-  font-family: swiper-icons;
-  font-size: var(--swiper-navigation-size);
-  text-transform: none !important;
-  letter-spacing: 0;
-  text-transform: none;
-  font-variant: initial;
-  line-height: 1;
-}
+// .swiper__button-prev::after,
+// .swiper__button-next::after {
+//   font-family: swiper-icons;
+//   font-size: var(--swiper-navigation-size);
+//   text-transform: none !important;
+//   letter-spacing: 0;
+//   text-transform: none;
+//   font-variant: initial;
+//   line-height: 1;
+// }
 
 .swiper__button-prev,
 .swiper__container-rtl .swiper__button-next {
@@ -310,8 +310,6 @@ button.swiper__pagination-bullet {
   margin: 0;
   padding: 0;
   box-shadow: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 }
 
@@ -415,7 +413,6 @@ button.swiper__pagination-bullet {
 .swiper-scrollbar {
   border-radius: 10px;
   position: relative;
-  -ms-touch-action: none;
   touch-action: none;
   background: rgba(0, 0, 0, 0.1);
 }
@@ -546,7 +543,6 @@ button.swiper__pagination-bullet {
 
 .swiper__container-cube .swiper__slide {
   pointer-events: none;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   z-index: 1;
   visibility: hidden;
@@ -581,7 +577,6 @@ button.swiper__pagination-bullet {
 .swiper__container-cube .swiper__slide-shadow-left,
 .swiper__container-cube .swiper__slide-shadow-right {
   z-index: 0;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -603,7 +598,6 @@ button.swiper__pagination-bullet {
   top: 0;
   bottom: 0;
   right: 0;
-  -webkit-filter: blur(50px);
   filter: blur(50px);
 }
 
@@ -613,7 +607,6 @@ button.swiper__pagination-bullet {
 
 .swiper__container-flip .swiper__slide {
   pointer-events: none;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   z-index: 1;
 }
@@ -632,6 +625,5 @@ button.swiper__pagination-bullet {
 .swiper__container-flip .swiper__slide-shadow-left,
 .swiper__container-flip .swiper__slide-shadow-right {
   z-index: 0;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
