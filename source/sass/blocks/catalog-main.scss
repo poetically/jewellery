@@ -56,11 +56,16 @@
   text-transform: uppercase;
   font-size: 34px;
   line-height: 130%;
-  letter-spacing: 0.03em;
+  // letter-spacing: 0.03em;
   color: #ffffff;
   padding-top: 92px;
   text-align: center;
   margin: 0;
+
+  @media (max-width: $mobile-max-width) {
+    width: auto;
+    padding: 92px 25px 0;
+  }
 }
 
 .catalog-main__subtitle {
@@ -72,6 +77,11 @@
   text-align: center;
   color: #ffffff;
   margin: 0;
+
+  @media (max-width: $mobile-max-width) {
+    width: auto;
+    padding: 0 30px;
+  }
 }
 
 .catalog-main__filter-catalog {
@@ -86,9 +96,12 @@
   @media (max-width: $tablet-max-width) {
     display: block;
     max-width: 678px;
-    width: 100%;
     margin: 0 auto;
     padding: 50px 45px 75px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    padding: 40px 15px 70px;
   }
 }
 

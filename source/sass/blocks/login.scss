@@ -16,7 +16,9 @@
     background-image: url("../img/bg-login-desktop@2x.jpg");
   }
 
-  @media (max-width: $tablet-min-width) {
+  @media (max-width: $tablet-max-width) {
+    width: 442px;
+    padding: 200px 50px 60px;
     background-image: url("../img/bg-login-tablet.jpg");
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -24,7 +26,9 @@
     }
   }
 
-  @media (max-width: $mobile-min-width) {
+  @media (max-width: $mobile-max-width) {
+    width: 270px;
+    padding: 130px 15px 45px;
     background-image: url("../img/bg-login-mobile.jpg");
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -39,6 +43,10 @@
   font-weight: 700;
   text-align: center;
   text-transform: capitalize;
+
+  @media (max-width: $mobile-max-width) {
+    font-size: 24px;
+  }
 }
 
 .login__form {
