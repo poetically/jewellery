@@ -1,9 +1,6 @@
 .photos {
   max-width: 1170px;
-  // width: 100%;
   padding: 0 60px;
-  // padding-left: 98px;
-  // padding-right: 98px;
   margin: 0 auto 130px;
 
   @media (max-width: $tablet-max-width) {
@@ -30,30 +27,6 @@
     font-size: 42px;
   }
 }
-
-// .photos__link {
-//   font-weight: 500;
-//   font-size: 16px;
-//   line-height: 130%;
-//   text-align: center;
-//   text-transform: capitalize;
-
-//   a {
-//     text-decoration: none;
-//     color: inherit;
-//     padding-bottom: 5px;
-//     border-bottom: 1px solid $brown;
-//   }
-
-//   a:hover,
-//   a:focus {
-//     opacity: 0.8;
-//   }
-
-//   a:active {
-//     opacity: 0.6;
-//   }
-// }
 
 .photos__container {
   display: flex;

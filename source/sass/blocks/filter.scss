@@ -27,6 +27,11 @@
     width: 362px;
     margin: 25px auto 0;
   }
+
+  @media (max-width: $mobile-max-width) {
+    width: 230px;
+    margin: 20px auto 0;
+  }
 }
 
 .filter__form button[type="submit"] {
@@ -49,6 +54,11 @@
   @media (max-width: $tablet-max-width) {
     width: 362px;
     margin: 35px auto 0;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 230px;
+    margin: 30px auto 0;
   }
 }
 
