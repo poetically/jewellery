@@ -78,3 +78,9 @@
     background-color: $brown;
   }
 }
+
+.filter__close {
+  @media (min-width: $desktop-min-width) {
+    display: none;
+  }
+}

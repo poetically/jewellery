@@ -11,6 +11,7 @@
   background-image: url("../img/bg-login-desktop.jpg");
   background-position: 0 0;
   background-repeat: no-repeat;
+  background-size: 430px 138px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/bg-login-desktop@2x.jpg");
@@ -20,6 +21,7 @@
     width: 442px;
     padding: 200px 50px 60px;
     background-image: url("../img/bg-login-tablet.jpg");
+    background-size: 442px 138px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/bg-login-tablet@2x.jpg");
@@ -30,6 +32,7 @@
     width: 270px;
     padding: 130px 15px 45px;
     background-image: url("../img/bg-login-mobile.jpg");
+    background-size: 270px 84px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/bg-login-mobile@2x.jpg");
@@ -43,6 +46,7 @@
   font-weight: 700;
   text-align: center;
   text-transform: capitalize;
+  margin: 0;
 
   @media (max-width: $mobile-max-width) {
     font-size: 24px;

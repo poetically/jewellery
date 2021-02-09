@@ -1,7 +1,7 @@
 .article {
   display: grid;
   grid-template-columns: minmax(auto, 600px) minmax(auto, 370px);
-  grid-gap: calc(40px + 4%);
+  grid-gap: calc(40px + 5%);
 
   @media (max-width: $tablet-max-width) {
     grid-template-columns: 319px minmax(auto, 370px);
@@ -19,7 +19,7 @@
   grid-row: 1 / 2;
   grid-column: 2 / 3;
   max-width: 370px;
-  justify-self: start;
+  // justify-self: ;
 
   @media (max-width: $tablet-max-width) {
     max-width: 319px;
@@ -37,11 +37,13 @@
   font-family: "Cormorant Garamond", "Georgia", serif;
   font-weight: 700;
   font-size: 34px;
-  margin: 0;
+  text-transform: capitalize;
+  margin: 0 0 30px;
 }
 
 .article__subtitle {
   font-size: 26px;
+  margin: 0 0 45px;
 }
 
 .article__tab-list {
@@ -50,7 +52,7 @@
   justify-content: start;
   grid-gap: 35px;
   list-style: none;
-  margin: 0;
+  margin: 0 0 23px;
   padding: 0;
 }
 
@@ -67,6 +69,10 @@
 
 .article__tab--active a {
   color: inherit;
+}
+
+.article__tab-content {
+  margin: 0 0 45px;
 }
 
 .article__tab-description {
@@ -91,6 +97,7 @@
   width: 100%;
   padding: 25px 20px;
   background-color: $brown;
+  margin: 0 0 15px;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
@@ -110,7 +117,8 @@
 .article__conditions {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  grid-gap: 25px;
+  grid-column-gap: 25px;
+  grid-row-gap: 10px;
 
   a {
     text-decoration: none;

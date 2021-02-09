@@ -43,7 +43,7 @@
   }
 
   @media (max-width: $mobile-max-width) {
-    grid-template-columns: minmax(320px, 339px);
+    grid-template-columns: minmax(auto, 339px);
     grid-template-rows: 1fr 1fr;
     margin: 0 auto;
 

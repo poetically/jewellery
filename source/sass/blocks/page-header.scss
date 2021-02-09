@@ -18,7 +18,7 @@
   grid-template-columns: 1fr auto 1fr;
   column-gap: 50px;
   max-width: 1170px;
-  margin: 0 auto 15px;
+  margin: 0 auto 25px;
   padding: 30px 60px 0;
 
   @media (max-width: $tablet-max-width) {
@@ -49,7 +49,7 @@
 .page-header__search {
   grid-row-start: 1;
   grid-column: 1 / 2;
-  margin-top: 6px;
+  margin-top: 16px;
 
   @media (max-width: $tablet-max-width) {
     margin-top: 35px;
@@ -59,7 +59,9 @@
 
 .page-header__login-cart {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
+  margin-top: 12px;
 
   a {
     text-decoration: none;
@@ -84,8 +86,7 @@
 
 .page-header__jewellery-types {
   display: flex;
-  padding-top: 18px;
-  padding-bottom: 20px;
+  padding: 18px 0;
   border-top: 1px solid #f6f5f4;
 
   @media (max-width: $tablet-max-width) {
