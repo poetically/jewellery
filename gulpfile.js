@@ -41,7 +41,7 @@ exports.images = images;
 const createWebp = () => {
   return gulp
     .src('source/img/**/*.{png,jpg}')
-    .pipe(webp({ quality: 90 }))
+    .pipe(webp({ quality: 85 }))
     .pipe(gulp.dest('source/img'));
 };
 exports.webp = createWebp;
