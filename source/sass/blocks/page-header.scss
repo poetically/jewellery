@@ -27,14 +27,21 @@
   }
 
   @media (max-width: $mobile-max-width) {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 20px 15px 15px;
+    margin: 0 auto;
   }
 }
 
 .page-header__logo {
   @media (max-width: $tablet-max-width) {
     grid-column: 2 / 3;
+  }
+}
+
+.page-header__logo-image {
+  @media (max-width: $mobile-max-width) {
+    width: 52px;
+    height: 52px;
   }
 }
 
@@ -54,6 +61,10 @@
   @media (max-width: $tablet-max-width) {
     margin-top: 35px;
     margin-bottom: 15px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    margin-top: 25px;
   }
 }
 
@@ -75,6 +86,10 @@
   a + a {
     margin-left: 37px;
   }
+
+  @media (max-width: $mobile-max-width) {
+    margin-top: 3px;
+  }
 }
 
 
@@ -91,7 +106,8 @@
 
   @media (max-width: $tablet-max-width) {
     border-top: none;
-    padding-left: 40px;
+    padding-left: 45px;
+    padding-top: 5px;
   }
 
   @media (max-width: $mobile-max-width) {
@@ -128,6 +144,10 @@
     flex-direction: column;
     margin-bottom: 25px;
   }
+
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 15px;
+  }
 }
 
 .page-header__jewellery-item a {
@@ -149,7 +169,7 @@
 
   @media (max-width: $tablet-max-width) {
     margin-left: 0;
-    margin-top: 20px;
+    margin-top: 21px;
   }
 }
 
@@ -160,18 +180,19 @@
     font-size: 18px;
     line-height: 130%;
     opacity: 0.75;
-    margin-bottom: 35px;
-    padding-left: 40px;
+    margin-bottom: 30px;
+    padding-left: 45px;
   }
 
   @media (max-width: $mobile-max-width) {
     padding-left: 15px;
+    margin-bottom: 20px;
   }
 }
 
 .page-header__about-info a {
   @media (max-width: $tablet-max-width) {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
   }
 }
 
@@ -182,7 +203,7 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 130%;
-    padding-left: 40px;
+    padding-left: 45px;
   }
 
   @media (max-width: $mobile-max-width) {
@@ -194,12 +215,12 @@
   .page-header__menu-button {
     position: absolute;
     display: block;
-    padding: 0;
 
-    top: 45px;
-    left: 40px;
-    width: 35px;
-    height: 30px;
+    top: 52px;
+    left: 45px;
+    width: 25px;
+    height: 18px;
+    padding: 10px;
     border: none;
     mask-image: url("../img/icon-menu.svg");
     mask-repeat: no-repeat;
@@ -220,7 +241,7 @@
       position: absolute;
       content: "";
       left: 0;
-      top: 20px;
+      top: 13px;
       width: 20px;
       height: 18px;
       mask-image: url("../img/icon-cart.svg");
@@ -372,10 +393,11 @@
       padding-left: 45px;
     }
   }
+}
 
-  .page-header .page-header__menu-button {
-    @media (max-width: $mobile-max-width) {
-      left: 15px;
-    }
+.page-header .page-header__menu-button {
+  @media (max-width: $mobile-max-width) {
+    left: 15px;
+    top: 35px;
   }
 }

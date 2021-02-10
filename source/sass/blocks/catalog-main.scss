@@ -12,6 +12,12 @@
     height: 1px;
     background-color: #f6f5f4;
   }
+
+  @media (max-width: $mobile-max-width) {
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .catalog-main__wrapper {
@@ -64,7 +70,7 @@
 
   @media (max-width: $mobile-max-width) {
     width: auto;
-    padding: 92px 25px 0;
+    padding: 80px 25px 0;
   }
 }
 

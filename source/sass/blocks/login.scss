@@ -6,7 +6,7 @@
   width: 430px;
   box-sizing: border-box;
   margin-top: 30px auto 0;
-  padding: 200px 45px 60px;
+  padding: 200px 45px 45px;
   background-color: #f0eae4;
   background-image: url("../img/bg-login-desktop.jpg");
   background-position: 0 0;
@@ -19,7 +19,7 @@
 
   @media (max-width: $tablet-max-width) {
     width: 442px;
-    padding: 200px 50px 60px;
+    padding: 200px 50px 42px;
     background-image: url("../img/bg-login-tablet.jpg");
     background-size: 442px 138px;
 
@@ -30,7 +30,7 @@
 
   @media (max-width: $mobile-max-width) {
     width: 270px;
-    padding: 130px 15px 45px;
+    padding: 130px 15px 25px;
     background-image: url("../img/bg-login-mobile.jpg");
     background-size: 270px 84px;
 
@@ -46,10 +46,14 @@
   font-weight: 700;
   text-align: center;
   text-transform: capitalize;
-  margin: 0;
+  margin: 0 0 35px;
 
   @media (max-width: $mobile-max-width) {
     font-size: 24px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    margin: 0 0 22px;
   }
 }
 
@@ -75,7 +79,7 @@
     padding: 10px 3px;
 
     &:not(:last-of-type) {
-      margin-bottom: 35px;
+      margin-bottom: 27px;
     }
 
     &::placeholder {
@@ -90,6 +94,12 @@
     &:focus::placeholder {
       color: $text-basic;
     }
+
+    @media (max-width: $mobile-max-width) {
+      &:not(:last-of-type) {
+        margin-bottom: 22px;
+      }
+    }
   }
 }
 
@@ -102,7 +112,7 @@
   font-size: 12px;
   line-height: 18px;
   color: #9b9997;
-  margin-bottom: 40px;
+  margin: 5px 0 45px;
 
   &:hover,
   &:focus {
@@ -112,6 +122,10 @@
 
   &:active {
     color: #000000;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    margin: 5px 0 38px;
   }
 }
 

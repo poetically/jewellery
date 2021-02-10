@@ -17,7 +17,7 @@
 
 .carousel__button-prev,
 .carousel__button-next {
-  top: 2px;
+  top: 3px;
   border: none;
   width: 50px;
   height: 20px;
@@ -25,8 +25,9 @@
   color: $brown;
   cursor: pointer;
 
-  &:focus {
-    outline: 2px solid $brown;
+  &:focus::before,
+  &:hover::before {
+    background-color: $text-basic;
   }
 
   &:disabled {
@@ -36,7 +37,8 @@
 
 .carousel__button-prev {
   position: absolute;
-  left: 7px;
+  // left: 7px;
+  left: 2px;
   color: inherit;
 
   &::before {
@@ -56,11 +58,21 @@
     transform: translateX(-5px);
     transition: all 0.4 ease;
   }
+
+  @media (max-width: $tablet-max-width) {
+    &::before {
+      top: 2px;
+      width: 36px;
+      height: 15px;
+      mask-image: url("../img/icon-left-flash-tablet.svg");
+    }
+  }
 }
 
 .carousel__button-next {
   position: absolute;
-  right: 7px;
+  // right: 7px;
+  right: 2px;
   color: inherit;
 
   &::before {
@@ -80,16 +92,37 @@
     transform: translateX(5px);
     transition: all 0.4 ease;
   }
+
+  @media (max-width: $tablet-max-width) {
+    &::before {
+      top: 2px;
+      width: 36px;
+      height: 15px;
+      mask-image: url("../img/icon-right-flash-tablet.svg");
+    }
+  }
 }
 
 .carousel__container {
   width: 100%;
   height: 100%;
-  padding-top: 120px;
+  padding-top: 110px;
+
+  @media (max-width: $tablet-max-width) {
+    padding-top: 100px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    padding-top: 90px;
+  }
 }
 
 .carousel__slide-wrapper {
-  padding-bottom: 130px;
+  padding-bottom: 160px;
+
+  @media (max-width: $tablet-max-width) {
+    padding-bottom: 150px;
+  }
 }
 
 .carousel__slide {
@@ -116,9 +149,15 @@
     font-size: 16px;
     line-height: 130%;
     text-align: center;
+    margin: 20px 0 0;
+
+    p {
+      margin: 0;
+    }
 
     p + p {
       font-weight: 700;
+      margin: 5px 0 0;
     }
   }
 
@@ -142,6 +181,10 @@
       width: 130px;
       height: 136px;
     }
+
+    figcaption {
+      margin: 15px 0 0;
+    }
   }
 }
 
@@ -158,5 +201,5 @@
   cursor: pointer;
   padding-bottom: 30px;
   margin-bottom: -80px;
-  z-index: 100;
+  z-index: 2;
 }

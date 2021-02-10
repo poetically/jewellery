@@ -23,13 +23,14 @@
 
   @media (max-width: $tablet-max-width) {
     max-width: 319px;
+    margin-top: 3px;
   }
 
   @media (max-width: $mobile-max-width) {
 
     grid-row: 2 / 3;
     grid-column: 1 / 3;
-    margin: 0 auto;
+    margin: 18px auto 0;
   }
 }
 
@@ -44,6 +45,10 @@
 .article__subtitle {
   font-size: 26px;
   margin: 0 0 45px;
+
+  @media (max-width: $mobile-max-width) {
+    margin: 0 0 35px;
+  }
 }
 
 .article__tab-list {
@@ -72,14 +77,18 @@
 }
 
 .article__tab-content {
-  margin: 0 0 45px;
+  margin: 0 0 50px;
+
+  @media (max-width: $mobile-max-width) {
+    margin: 0 0 40px;
+  }
 }
 
 .article__tab-description {
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 9px 0;
   border-bottom: 1px solid #f6f5f4;
 
   span {
@@ -112,6 +121,14 @@
   &:active {
     opacity: 0.7;
   }
+
+  @media (max-width: $mobile-max-width) {
+    margin: 0 0 8px;
+  }
+
+  @media (max-width: $mobile-min-width) {
+    width: 290px;
+  }
 }
 
 .article__conditions {
@@ -122,6 +139,7 @@
 
   a {
     text-decoration: none;
+    text-transform: capitalize;
     color: #9b9997;
     font-weight: 500;
     font-size: 14px;
@@ -137,6 +155,17 @@
 
     a {
       font-size: 12px;
+    }
+  }
+
+  @media (max-width: $mobile-min-width) {
+    grid-template-columns: repeat(3, 50px);
+    max-width: 270px;
+    justify-content: space-around;
+    grid-gap: 40px;
+
+    a {
+      text-align: center;
     }
   }
 }
@@ -229,6 +258,6 @@
   @media (max-width: 600px) {
     display: block;
     text-align: center;
-    margin: -20px auto 0;
+    margin: -25px auto 0;
   }
 }

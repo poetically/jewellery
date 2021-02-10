@@ -1,16 +1,17 @@
 .added--page .added__inner {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .added__inner {
   width: 500px;
   box-sizing: border-box;
   background-color: #ffffff;
-  padding: 50px 0;
+  padding: 53px 0;
   margin: 0 auto;
 
   @media (max-width: $mobile-max-width) {
     width: 290px;
+    padding: 40px 0 45px;
   }
 }
 
@@ -19,11 +20,11 @@
   padding: 0 35px 40px;
 
   @media (max-width: $tablet-max-width) {
-    padding: 0 30px;
+    padding: 0 30px 40px;
   }
 
   @media (max-width: $mobile-max-width) {
-    padding: 0 15px;
+    padding: 0 15px 34px;
   }
 }
 
@@ -32,8 +33,14 @@
   font-size: 26px;
   font-weight: 700;
   text-align: center;
-  text-transform: capitalize;
   margin: 0 0 50px;
+
+  @media (max-width: $mobile-max-width) {
+    width: 210px;
+    font-size: 24px;
+    line-height: 120%;
+    margin: 0 auto 30px;
+  }
 }
 
 .added__item {
@@ -46,26 +53,24 @@
   }
 }
 
-.added__item-info {
+.added__item figure {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: auto 1fr;
-}
-
-.added__item figure {
+  grid-template-columns: minmax(84px, 1fr) minmax(200px, 1fr);
   max-width: 84px;
-  height: 79px;
   margin: 0;
 
   img {
     width: 88px;
     height: 79px;
     object-fit: cover;
+    vertical-align: middle;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: $mobile-max-width) {
     width: auto;
-    height: 63px;
+    grid-gap: 10px;
+    grid-template-columns: minmax(70px, 1fr) minmax(150px, 1fr);
 
     img {
       width: 70px;
@@ -88,6 +93,15 @@
   p + p {
     font-family: "Poppins", "Arial", sans-serif;
     font-weight: 400;
+    margin-top: 10px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    font-size: 16px;
+
+    p + p {
+      margin-top: 5px;
+    }
   }
 }
 
@@ -125,6 +139,10 @@
 
 .added__minus {
   mask-image: url("../img/icon-minus.svg");
+
+  @media (max-width: $mobile-max-width) {
+    height: 2px;
+  }
 }
 
 .added__links {
@@ -138,6 +156,7 @@
   }
 
   @media (max-width: $mobile-max-width) {
+    display: block;
     padding: 0 15px;
   }
 }
@@ -146,7 +165,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
-  padding: 0 35px;
+  padding: 0 35px 20px;
   font-size: 14px;
 
   p + p {
@@ -154,12 +173,15 @@
     text-align: right;
   }
 
-  @media (max-width: $tablet-max-width) {
-    padding: 0 30px;
-  }
 
   @media (max-width: $mobile-max-width) {
-    padding: 0 15px;
+    display: block;
+    padding: 5px 15px 13px;
+    font-size: 12px;
+
+    p + p {
+      text-align: left;
+    }
   }
 }
 
@@ -184,6 +206,10 @@
   &:active {
     opacity: 0.7;
   }
+
+  @media (max-width: $mobile-max-width) {
+    width: 260px;
+  }
 }
 
 .added__continue {
@@ -206,5 +232,10 @@
 
   &:active {
     opacity: 0.7;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 260px;
+    margin-bottom: 15px;
   }
 }

@@ -1,9 +1,13 @@
 .article-main {
-  padding: 80px 0 130px;
+  padding: 80px 0 105px;
   min-width: 0;
 
+  @media (max-width: $tablet-max-width) {
+    padding: 30px 0 57px;
+  }
+
   @media (max-width: $mobile-max-width) {
-    padding: 20px 0 70px;
+    padding: 0 0 50px;
   }
 }
 
@@ -14,10 +18,11 @@
 
   @media (max-width: $tablet-max-width) {
     padding: 0 45px;
-    margin: 0 auto 80px;
+    margin: 0 auto 75px;
   }
 
   @media (max-width: $mobile-max-width) {
     padding: 0 15px;
+    margin: 0 auto 62px;
   }
 }

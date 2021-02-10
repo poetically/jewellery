@@ -2,7 +2,7 @@
   border-left: 1px solid $brown;
   border-right: 1px solid $brown;
   border-bottom: 1px solid $brown;
-  padding-bottom: 20px;
+  padding-bottom: 19px;
 
   &:first-child {
     border-top: 1px solid $brown;
@@ -11,10 +11,15 @@
   @media (max-width: $tablet-max-width) {
     border-left: 0;
     border-right: 0;
+    padding-bottom: 25px;
 
     &:first-child {
       border-top: 0;
     }
+  }
+
+  @media (max-width: $mobile-max-width) {
+    padding-bottom: 17px;
   }
 }
 
@@ -24,17 +29,49 @@
   &::after {
     right: 25px;
   }
+
+  @media (max-width: $tablet-max-width) {
+    padding: 35px 0 10px 30px;
+
+    &::after {
+      bottom: none;
+      top: 35px;
+      right: 50px;
+      width: 25px;
+      height: 14px;
+    }
+  }
+
+  @media (max-width: $mobile-max-width) {
+    padding: 20px 0 10px 15px;
+
+    &::after {
+      top: 25px;
+      right: 35px;
+      width: 22px;
+      height: 12px;
+    }
+  }
 }
 
 .filter-item__control h3 {
   font-size: inherit;
   line-height: inherit;
   margin: 0;
+
+  @media (max-width: $tablet-max-width) {
+    font-size: 18px;
+  }
 }
 
 .filter-item__panel {
   padding: 20px 25px 0;
+
+  @media (max-width: $tablet-max-width) {
+    padding: 20px 30px 0;
+  }
 }
+
 
 .filter-item input[type="checkbox"] {
   position: absolute;
@@ -67,6 +104,20 @@
     box-sizing: border-box;
     background-color: transparent;
     border: 1px solid $brown;
+  }
+
+  @media (max-width: $tablet-max-width) {
+    font-size: inherit;
+    padding-left: 38px;
+
+    // &:not(:last-child) {
+    //   padding-bottom: 17px;
+    // }
+
+    &::before {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 
