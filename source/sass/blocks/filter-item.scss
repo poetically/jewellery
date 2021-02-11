@@ -2,7 +2,7 @@
   border-left: 1px solid $brown;
   border-right: 1px solid $brown;
   border-bottom: 1px solid $brown;
-  padding-bottom: 19px;
+  // padding-bottom: 10px;
 
   &:first-child {
     border-top: 1px solid $brown;
@@ -11,27 +11,24 @@
   @media (max-width: $tablet-max-width) {
     border-left: 0;
     border-right: 0;
-    padding-bottom: 25px;
+    // padding-bottom: 5px;
 
     &:first-child {
       border-top: 0;
     }
   }
-
-  @media (max-width: $mobile-max-width) {
-    padding-bottom: 17px;
-  }
 }
 
 .filter-item__control {
-  padding: 25px 0  0 25px;
+  padding: 25px 0  20px 25px;
 
   &::after {
+    top: 30px;
     right: 25px;
   }
 
   @media (max-width: $tablet-max-width) {
-    padding: 35px 0 10px 30px;
+    padding: 35px 0 30px 30px;
 
     &::after {
       bottom: none;
@@ -43,7 +40,7 @@
   }
 
   @media (max-width: $mobile-max-width) {
-    padding: 20px 0 10px 15px;
+    padding: 25px 0 25px 20px;
 
     &::after {
       top: 25px;
@@ -65,10 +62,14 @@
 }
 
 .filter-item__panel {
-  padding: 20px 25px 0;
+  padding: 0 25px 20px;
 
   @media (max-width: $tablet-max-width) {
-    padding: 20px 30px 0;
+    padding: 0 30px 18px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    padding: 0 30px 10px;
   }
 }
 
@@ -109,17 +110,29 @@
   @media (max-width: $tablet-max-width) {
     font-size: inherit;
     padding-left: 38px;
+    padding-bottom: 13px;
 
     // &:not(:last-child) {
     //   padding-bottom: 17px;
     // }
 
     &::before {
+      top: 0;
+      left: 7px;
       width: 18px;
       height: 18px;
     }
   }
+
+  @media (max-width: $mobile-max-width) {
+    padding-left: 30px;
+
+    &::before {
+      left: 0;
+    }
+  }
 }
+
 
 .filter-item input[type="checkbox"]:checked + label::before {
   background-color: $brown;

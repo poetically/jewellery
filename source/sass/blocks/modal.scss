@@ -53,6 +53,7 @@
 
     .modal--closed {
       visibility: hidden;
+      opacity: 0;
     }
   }
 
@@ -71,7 +72,7 @@
   position: fixed;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   left: 0;
   right: 0;
   top: 0;
@@ -79,9 +80,17 @@
   z-index: 4;
   background-color: rgba(0, 0, 0, 0.2);
 
+  .modal__body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+  }
+
   .modal__inner {
     position: relative;
-    margin-top: 30px;
+    // margin-top: 30px;
     z-index: 5;
   }
 
@@ -129,7 +138,7 @@
   position: fixed;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   left: 0;
   right: 0;
   top: 0;
@@ -139,7 +148,6 @@
 
   .modal__inner {
     position: relative;
-    margin-top: 30px;
     z-index: 5;
   }
 

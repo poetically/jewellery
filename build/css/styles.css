@@ -356,7 +356,8 @@ html {
 
 body {
   display: grid;
-  grid-template-rows: minmax(50px, auto) 1fr minmax(70px, auto);
+  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
+  grid-template-rows: min-content 1fr min-content;
   grid-template-columns: 1fr;
   font-family: "Poppins", "Arial", sans-serif;
   font-style: normal;
@@ -917,7 +918,7 @@ button.swiper__pagination-bullet {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
 
-.accordion__item {
+.accordion__item:not(:last-child) {
   border-bottom: 1px solid #a87b62; }
 
 .accordion__control {
@@ -931,7 +932,7 @@ button.swiper__pagination-bullet {
     width: 17px;
     height: 10px;
     right: 50px;
-    bottom: 5px;
+    top: 45px;
     background-image: url("../img/icon-shevron.svg");
     background-repeat: no-repeat;
     background-position: 0 0; }
@@ -1000,7 +1001,8 @@ button.swiper__pagination-bullet {
     .filter .modal__close:active {
       opacity: 0.8; }
   .filter .modal--closed {
-    visibility: hidden; } }
+    visibility: hidden;
+    opacity: 0; } }
 
 @media (max-width: 767px) {
   .filter .modal__close {
@@ -1012,16 +1014,21 @@ button.swiper__pagination-bullet {
   position: fixed;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   z-index: 4;
   background-color: rgba(0, 0, 0, 0.2); }
+  .login .modal__body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px; }
   .login .modal__inner {
     position: relative;
-    margin-top: 30px;
     z-index: 5; }
   .login .modal__close {
     position: absolute;
@@ -1057,7 +1064,7 @@ button.swiper__pagination-bullet {
   position: fixed;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   left: 0;
   right: 0;
   top: 0;
@@ -1066,7 +1073,6 @@ button.swiper__pagination-bullet {
   background-color: rgba(0, 0, 0, 0.2); }
   .added .modal__inner {
     position: relative;
-    margin-top: 30px;
     z-index: 5; }
   .added .modal__close {
     position: absolute;
@@ -2357,7 +2363,7 @@ button.swiper__pagination-bullet {
   text-align: center;
   text-transform: none;
   letter-spacing: 0.03em;
-  margin: 0 0 50px; }
+  margin: 0 0 48px; }
   @media (max-width: 767px) {
     .faq__title {
       margin: 0 0 32px; } }
@@ -2369,15 +2375,15 @@ button.swiper__pagination-bullet {
   border: 1px solid #a87b62; }
 
 .faq__item {
-  padding-top: 47px;
-  padding-bottom: 42px; }
+  padding-bottom: 35px; }
   @media (max-width: 767px) {
     .faq__item {
-      padding-top: 15px;
-      padding-bottom: 23px; } }
+      padding-bottom: 10px; } }
 
 .faq__item-title {
-  padding-left: 38px;
+  padding-top: 45px;
+  padding-left: 40px;
+  padding-bottom: 10px;
   font-size: 18px; }
   @media (max-width: 1023px) {
     .faq__item-title {
@@ -2388,21 +2394,22 @@ button.swiper__pagination-bullet {
     .faq__item-title {
       box-sizing: border-box;
       width: 100%;
+      padding-top: 15px;
       padding-left: 25px;
       padding-right: 60px;
+      padding-bottom: 13px;
       font-size: 16px;
       line-height: 140%; }
       .faq__item-title::after {
         right: 27px;
-        bottom: none;
-        top: 5px;
+        top: 20px;
         width: 22px;
         height: 12px; } }
 
 .faq__item-content {
   width: 540px;
   padding-left: 50px;
-  padding-top: 12px; }
+  padding-bottom: 10px; }
   @media (max-width: 767px) {
     .faq__item-content {
       width: 100%;
@@ -2539,7 +2546,7 @@ button.swiper__pagination-bullet {
   @media (max-width: 1023px) {
     .filter__form button[type="reset"] {
       width: 362px;
-      margin: 25px auto 0; } }
+      margin: 25px 30px 0; } }
   @media (max-width: 767px) {
     .filter__form button[type="reset"] {
       width: 230px;
@@ -2559,7 +2566,7 @@ button.swiper__pagination-bullet {
   @media (max-width: 1023px) {
     .filter__form button[type="submit"] {
       width: 362px;
-      margin: 35px auto 0; } }
+      margin: 40px 30px 0; } }
   @media (max-width: 767px) {
     .filter__form button[type="submit"] {
       width: 230px;
@@ -2590,28 +2597,24 @@ button.swiper__pagination-bullet {
 .filter-item {
   border-left: 1px solid #a87b62;
   border-right: 1px solid #a87b62;
-  border-bottom: 1px solid #a87b62;
-  padding-bottom: 19px; }
+  border-bottom: 1px solid #a87b62; }
   .filter-item:first-child {
     border-top: 1px solid #a87b62; }
   @media (max-width: 1023px) {
     .filter-item {
       border-left: 0;
-      border-right: 0;
-      padding-bottom: 25px; }
+      border-right: 0; }
       .filter-item:first-child {
         border-top: 0; } }
-  @media (max-width: 767px) {
-    .filter-item {
-      padding-bottom: 17px; } }
 
 .filter-item__control {
-  padding: 25px 0  0 25px; }
+  padding: 25px 0  20px 25px; }
   .filter-item__control::after {
+    top: 30px;
     right: 25px; }
   @media (max-width: 1023px) {
     .filter-item__control {
-      padding: 35px 0 10px 30px; }
+      padding: 35px 0 30px 30px; }
       .filter-item__control::after {
         bottom: none;
         top: 35px;
@@ -2620,7 +2623,7 @@ button.swiper__pagination-bullet {
         height: 14px; } }
   @media (max-width: 767px) {
     .filter-item__control {
-      padding: 20px 0 10px 15px; }
+      padding: 25px 0 25px 20px; }
       .filter-item__control::after {
         top: 25px;
         right: 35px;
@@ -2636,10 +2639,13 @@ button.swiper__pagination-bullet {
       font-size: 18px; } }
 
 .filter-item__panel {
-  padding: 20px 25px 0; }
+  padding: 0 25px 20px; }
   @media (max-width: 1023px) {
     .filter-item__panel {
-      padding: 20px 30px 0; } }
+      padding: 0 30px 18px; } }
+  @media (max-width: 767px) {
+    .filter-item__panel {
+      padding: 0 30px 10px; } }
 
 .filter-item input[type="checkbox"] {
   position: absolute;
@@ -2673,10 +2679,18 @@ button.swiper__pagination-bullet {
   @media (max-width: 1023px) {
     .filter-item label {
       font-size: inherit;
-      padding-left: 38px; }
+      padding-left: 38px;
+      padding-bottom: 13px; }
       .filter-item label::before {
+        top: 0;
+        left: 7px;
         width: 18px;
         height: 18px; } }
+  @media (max-width: 767px) {
+    .filter-item label {
+      padding-left: 30px; }
+      .filter-item label::before {
+        left: 0; } }
 
 .filter-item input[type="checkbox"]:checked + label::before {
   background-color: #a87b62; }
@@ -2706,6 +2720,13 @@ button.swiper__pagination-bullet {
   height: 40px;
   width: 200px;
   margin: 0 auto; }
+  @media (max-width: 1023px) {
+    .filter-range {
+      margin: 0 0 15px;
+      width: 304px; } }
+  @media (max-width: 767px) {
+    .filter-range {
+      width: 100%; } }
 
 .filter-range__scale {
   position: absolute;
@@ -2719,9 +2740,9 @@ button.swiper__pagination-bullet {
 .filter-range__bar {
   position: absolute;
   content: "";
-  left: 50px;
+  left: 25%;
   top: 0;
-  width: 110px;
+  width: 50%;
   height: 1px;
   background-color: #a87b62; }
 
@@ -2735,12 +2756,17 @@ button.swiper__pagination-bullet {
   background-color: #a87b62;
   border-radius: 50%;
   cursor: pointer; }
+  @media (max-width: 1023px) {
+    .filter-range__toggle-min,
+    .filter-range__toggle-max {
+      width: 18px;
+      height: 18px; } }
 
 .filter-range__toggle-min {
-  left: 45px; }
+  left: 25%; }
 
 .filter-range__toggle-max {
-  left: 150px; }
+  left: 75%; }
 
 .filter-range__price-controls {
   position: relative; }
@@ -2750,16 +2776,20 @@ button.swiper__pagination-bullet {
   position: absolute;
   display: block;
   top: 20px;
-  width: 40px;
+  width: 50px;
   height: 15px;
   font-weight: 500;
   font-size: 14px; }
+  @media (max-width: 1023px) {
+    .filter-range__max-price,
+    .filter-range__min-price {
+      font-size: 16px; } }
 
 .filter-range__min-price {
-  left: 35px; }
+  left: 25%; }
 
 .filter-range__max-price {
-  left: 140px; }
+  left: 75%; }
 
 .price-controls label {
   display: inline-block;

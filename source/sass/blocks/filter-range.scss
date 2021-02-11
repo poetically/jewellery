@@ -4,6 +4,15 @@
   height: 40px;
   width: 200px;
   margin: 0 auto;
+
+  @media (max-width: $tablet-max-width) {
+    margin: 0 0 15px;
+    width: 304px;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 100%;
+  }
 }
 
 .filter-range__scale {
@@ -19,9 +28,11 @@
 .filter-range__bar {
   position: absolute;
   content: "";
-  left: 50px;
+  // left: 50px;
+  left: 25%;
   top: 0;
-  width: 110px;
+  // width: 110px;
+  width: 50%;
   height: 1px;
   background-color: $brown;
   // z-index: 5;
@@ -38,14 +49,21 @@
   background-color: $brown;
   border-radius: 50%;
   cursor: pointer;
+
+  @media (max-width: $tablet-max-width) {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .filter-range__toggle-min {
-  left: 45px;
+  // left: 45px;
+  left: 25%;
 }
 
 .filter-range__toggle-max {
-  left: 150px;
+  // left: 150px;
+  left: 75%;
 }
 
 .filter-range__price-controls {
@@ -57,18 +75,24 @@
   position: absolute;
   display: block;
   top: 20px;
-  width: 40px;
+  width: 50px;
   height: 15px;
   font-weight: 500;
   font-size: 14px;
+
+  @media (max-width: $tablet-max-width) {
+    font-size: 16px;
+  }
 }
 
 .filter-range__min-price {
-  left: 35px;
+  // left: 35px;
+  left: 25%;
 }
 
 .filter-range__max-price {
-  left: 140px;
+  // left: 140px;
+  left: 75%;
 }
 
 .price-controls label {
@@ -94,21 +118,3 @@
   border-radius: 5px;
   background: #f1f1f1;
 }
-
-// /* Chrome, Safari, Edge, Opera */
-// .price-controls input::-webkit-outer-spin-button,
-// .price-controls input::-webkit-inner-spin-button {
-//   -webkit-appearance: none;
-//   appearance: none;
-//   margin: 0;
-// }
-
-// /* Firefox */
-// .price-controls input[type=number] {
-//   -moz-appearance: textfield;
-//   appearance: none;
-// }
-
-// .max-price {
-//   text-align: right;
-// }

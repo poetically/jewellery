@@ -187,12 +187,12 @@
   });
 
   accordionPanels.forEach(function (panel) {
-    var padding = window.getComputedStyle(panel).getPropertyValue('padding-top');
-    return panel.setAttribute('data-padding-top', padding);
+    var padding = window.getComputedStyle(panel).getPropertyValue('padding-bottom');
+    return panel.setAttribute('data-padding-bottom', padding);
   });
 
   var zeroPadding = function (panel) {
-    panel.style.paddingTop = '0';
+    panel.style.paddingBottom = '0';
   };
 
   var zeroHeight = function (panel) {
@@ -214,11 +214,11 @@
       control.setAttribute('aria-expanded', !expanded);
       if (parent.classList.contains('accordion__item--active')) {
         panel.style.height = '0';
-        panel.style.paddingTop = '0';
+        panel.style.paddingBottom = '0';
         parent.classList.remove('accordion__item--active');
       } else {
         panel.style.height = panel.getAttribute('data-height');
-        panel.style.paddingTop = panel.getAttribute('data-padding-top');
+        panel.style.paddingBottom = panel.getAttribute('data-padding-bottom');
         parent.classList.add('accordion__item--active');
       }
     });

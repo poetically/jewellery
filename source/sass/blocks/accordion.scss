@@ -1,4 +1,4 @@
-.accordion__item {
+.accordion__item:not(:last-child) {
   border-bottom: 1px solid $brown;
 }
 
@@ -14,7 +14,7 @@
     width: 17px;
     height: 10px;
     right: 50px;
-    bottom: 5px;
+    top: 45px;
     background-image: url("../img/icon-shevron.svg");
     background-repeat: no-repeat;
     background-position: 0 0;
