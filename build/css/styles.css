@@ -1809,9 +1809,15 @@ button.swiper__pagination-bullet {
   .carousel__button-next:focus::before,
   .carousel__button-next:hover::before {
     background-color: #1d1613; }
-  .carousel__button-prev:disabled,
-  .carousel__button-next:disabled {
-    opacity: 0.5; }
+  @media (max-width: 600px) {
+    .carousel__button-prev,
+    .carousel__button-next {
+      display: none; } }
+
+.swiper__button-disabled {
+  opacity: 0.4;
+  transform: none;
+  transition: none; }
 
 .carousel__button-prev {
   position: absolute;
@@ -1831,9 +1837,6 @@ button.swiper__pagination-bullet {
     -webkit-mask-position: 0 0;
             mask-position: 0 0;
     background-color: #a87b62; }
-  .carousel__button-prev:hover {
-    transform: translateX(-5px);
-    transition: all 0.4 ease; }
   @media (max-width: 1023px) {
     .carousel__button-prev::before {
       top: 2px;
@@ -1860,9 +1863,6 @@ button.swiper__pagination-bullet {
     -webkit-mask-position: 0 0;
             mask-position: 0 0;
     background-color: #a87b62; }
-  .carousel__button-next:hover {
-    transform: translateX(5px);
-    transition: all 0.4 ease; }
   @media (max-width: 1023px) {
     .carousel__button-next::before {
       top: 2px;

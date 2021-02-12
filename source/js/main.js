@@ -239,12 +239,9 @@
       keyboard: {
         enabled: true
       },
-      mousewheel: {
-        sensitivity: 1
-      },
-      watchOverflow: true,
+      // watchOverflow: true,
       spaceBetween: 30,
-      observer: true,
+      // observer: true,
       breakpoints: {
         320: {
           slidesPerView: 2,

@@ -30,9 +30,15 @@
     background-color: $text-basic;
   }
 
-  &:disabled {
-    opacity: 0.5;
+  @media (max-width: 600px) {
+    display: none;
   }
+}
+
+.swiper__button-disabled {
+  opacity: 0.4;
+  transform: none;
+  transition: none;
 }
 
 .carousel__button-prev {
@@ -54,11 +60,6 @@
     background-color: $brown;
   }
 
-  &:hover {
-    transform: translateX(-5px);
-    transition: all 0.4 ease;
-  }
-
   @media (max-width: $tablet-max-width) {
     &::before {
       top: 2px;
@@ -71,7 +72,6 @@
 
 .carousel__button-next {
   position: absolute;
-  // right: 7px;
   right: 2px;
   color: inherit;
 
@@ -86,11 +86,6 @@
     mask-repeat: no-repeat;
     mask-position: 0 0;
     background-color: $brown;
-  }
-
-  &:hover {
-    transform: translateX(5px);
-    transition: all 0.4 ease;
   }
 
   @media (max-width: $tablet-max-width) {
