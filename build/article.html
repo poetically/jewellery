@@ -155,6 +155,8 @@
         <h2 class="carousel__title title">You may also like</h2>
         <p class="carousel__link subtitle-link"><a href="catalog.html">Shop now</a></p>
         <div class="carousel__container swiper__container">
+          <button class="carousel__button-prev" type="button"></button>
+          <button class="carousel__button-next"></button>
           <div class="carousel__slide-wrapper swiper__wrapper">
             <div class="carousel__slide swiper__slide">
               <a href="article.html">
@@ -445,55 +447,11 @@
               </a>
             </div>
           </div>
-          <button class="carousel__button-prev" type="button"></button>
-          <button class="carousel__button-next"></button>
+
           <div class="carousel__pagination swiper__pagination"></div>
         </div>
       </section>
-      <section class="added added--modal modal modal--closed">
-        <div class="added__inner modal__inner">
-          <div class="added__item-wrapper">
-            <h2 class="added__title">The item was added to your cart</h2>
-            <div class="added__item">
-              <a href="article.html">
-                <div class="added__item-info">
-                  <figure>
-                    <picture>
-                      <!-- 1х: 309px; 2x: 618px -->
-                      <source media="(min-width: 601px)" srcset="img/item/gold-necklace-cart-tablet.webp 1x, img/item/gold-necklace-cart-tablet@2x.webp 2x" type="image/webp">
-                      <!-- 1х: 270px; 2x: 540px -->
-                      <source media="(max-width: 600px)" srcset="img/item/gold-necklace-cart-mobile.webp 1x, img/item/gold-necklace-cart-mobile@2x.webp 2x" type="image/webp">
 
-                      <!-- 1х: 309px; 2x: 618px -->
-                      <source media="(max-width: 600px)" srcset="img/item/gold-necklace-cart-mobile.jpg 1x, img/item/gold-necklace-cart-mobile@2x.jpg 2x">
-                      <!-- 1х: 290px; 2x: 580px -->
-                      <img src="img/item/gold-necklace-cart-tablet.jpg" srcset="img/item/gold-necklace-cart-tablet@2x.jpg 2x" width="88" height="79" alt="">
-                    </picture>
-                    <figcaption>
-                      <p>Gold necklace</p>
-                      <p>$ 115</p>
-                    </figcaption>
-                  </figure>
-                </div>
-              </a>
-              <div class="added__counter">
-                <button class="added__plus"></button>
-                <span>1</span>
-                <button class="added__minus"></button>
-              </div>
-            </div>
-          </div>
-          <div class="added__notion">
-            <p>You have 1 item in the cart</p>
-            <p>Cart subtotal: $ 115</p>
-          </div>
-          <div class="added__links">
-            <a class="added__continue" href="catalog.html">Continue shopping</a>
-            <a class="added__checkout" href="#">Checkout</a>
-          </div>
-          <button class="added__close modal__close" type="button" title="close popup"></button>
-        </div>
-      </section>
       <section class="login login--modal modal modal--closed">
         <div class="login__inner modal__inner">
           <h2 class="login__title">Log in</h2>
@@ -501,7 +459,7 @@
             <label for="email-id">Enter your e-mail</label>
             <input type="email" name="email" id="email-id" placeholder="Your e-mail" required>
             <label for="pswd-id">Your password</label>
-            <input type="text" name="pswd" id="pswd-id" placeholder="Password" required>
+            <input type="password" name="pswd" id="pswd-id" placeholder="Password" required>
             <a class="login__forgotten" href="#">Forgot your password?</a>
             <button type="submit">Log in</button>
             <p class="login__sign-up">Don't have an account? <a href="#">Sing up</a></p>
@@ -510,6 +468,50 @@
         </div>
       </section>
     </main>
+    <section class="added added--modal modal modal--closed">
+      <div class="added__inner modal__inner">
+        <div class="added__item-wrapper">
+          <h2 class="added__title">The item was added to your cart</h2>
+          <div class="added__item">
+            <a href="article.html">
+              <div class="added__item-info">
+                <figure>
+                  <picture>
+                    <!-- 1х: 309px; 2x: 618px -->
+                    <source media="(min-width: 601px)" srcset="img/item/gold-necklace-cart-tablet.webp 1x, img/item/gold-necklace-cart-tablet@2x.webp 2x" type="image/webp">
+                    <!-- 1х: 270px; 2x: 540px -->
+                    <source media="(max-width: 600px)" srcset="img/item/gold-necklace-cart-mobile.webp 1x, img/item/gold-necklace-cart-mobile@2x.webp 2x" type="image/webp">
+
+                    <!-- 1х: 309px; 2x: 618px -->
+                    <source media="(max-width: 600px)" srcset="img/item/gold-necklace-cart-mobile.jpg 1x, img/item/gold-necklace-cart-mobile@2x.jpg 2x">
+                    <!-- 1х: 290px; 2x: 580px -->
+                    <img src="img/item/gold-necklace-cart-tablet.jpg" srcset="img/item/gold-necklace-cart-tablet@2x.jpg 2x" width="88" height="79" alt="">
+                  </picture>
+                  <figcaption>
+                    <p>Gold necklace</p>
+                    <p>$ 115</p>
+                  </figcaption>
+                </figure>
+              </div>
+            </a>
+            <div class="added__counter">
+              <button class="added__plus"></button>
+              <span>1</span>
+              <button class="added__minus"></button>
+            </div>
+          </div>
+        </div>
+        <div class="added__notion">
+          <p>You have 1 item in the cart</p>
+          <p>Cart subtotal: $ 115</p>
+        </div>
+        <div class="added__links">
+          <a class="added__continue" href="catalog.html">Continue shopping</a>
+          <a class="added__checkout" href="#">Checkout</a>
+        </div>
+        <button class="added__close modal__close" type="button" title="close popup"></button>
+      </div>
+    </section>
     <footer class="page-footer">
       <div class="page-footer__inner">
         <section class="page-footer__subscribe subscribe">
@@ -519,7 +521,7 @@
           <form class="subscribe__form" action="#" method="get">
             <div class="subscribe__form-inner">
               <label for="input-email">Enter your email for receiving our newsletter</label>
-              <input id="input-email" type="text" placeholder="your e-mail">
+              <input id="input-email" type="email" name="email" placeholder="your e-mail" required>
               <button type="submit">
                 <span>Sign&nbsp;Up</span>
                 <svg class="xrg" width="30" height="10">
