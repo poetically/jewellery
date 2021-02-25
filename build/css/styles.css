@@ -3225,6 +3225,7 @@ button.swiper__pagination-bullet {
     overflow: hidden; }
   .login__form input {
     border: none;
+    border-radius: 0;
     border-bottom: 1px solid #1d1613;
     background-color: #f0eae4;
     padding: 10px 3px; }

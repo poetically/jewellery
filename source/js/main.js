@@ -26,9 +26,12 @@
   var footerForm = document.querySelector('.subscribe__form');
   var footerEmail = document.querySelector('#input-email');
 
+  // var addedFocusable =
+
 
   var modal;
   var modalCloseBtn;
+  var lastFocus;
 
 
   var verifyAndAddEmail = function (field) {
@@ -98,6 +101,13 @@
 
   // modal
 
+  // fix body
+
+  var fixBody = function () {
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${window.scrollY}px`;
+  };
+
   /* close modal */
 
   var closeModal = function () {
@@ -105,6 +115,7 @@
     modal.classList.add('modal--closed');
     modalCloseBtn.removeEventListener('click', onClickCloseModal);
     window.removeEventListener('keydown', onEscPressCloseModal);
+    lastFocus.focus();
   };
 
   var onClickCloseModal = function () {
@@ -140,6 +151,7 @@
     modalCloseBtn.addEventListener('click', onClickCloseModal);
     window.addEventListener('keydown', onEscPressCloseModal);
     modal.addEventListener('mouseup', onClickOutsideClose);
+    lastFocus = document.activeElement;
   };
 
   // show filter modal
@@ -197,6 +209,9 @@
       modal = addedModal;
       modalCloseBtn = addedClose;
       openModal();
+      if (!addedModal.classList.contains('modal--closed')) {
+        addedModal.focus();
+      }
     });
   }
 
@@ -240,24 +255,50 @@
   });
 
 
-  var animatePanel = function animatePanel(control) {
+  // var animatePanel = function (control) {
+  //   control.addEventListener('click', function () {
+  //     var parent = control.parentNode;
+  //     var panel = parent.childNodes[3];
+  //     var expanded = control.getAttribute('aria-expanded') === 'true';
+  //     control.setAttribute('aria-expanded', !expanded);
+  //     if (parent.classList.contains('accordion__item--active')) {
+  //       zeroHeight(panel);
+  //       zeroPadding(panel);
+  //       parent.classList.remove('accordion__item--active');
+  //     } else {
+  //       panel.style.height = panel.getAttribute('data-height');
+  //       panel.style.paddingBottom = panel.getAttribute('data-padding-bottom');
+  //       parent.classList.add('accordion__item--active');
+  //     }
+  //   });
+  // };
+
+  var openClosePanel = function (control) {
+    var parent = control.parentNode;
+    var panel = parent.childNodes[3];
+    var expanded = control.getAttribute('aria-expanded') === 'true';
+    control.setAttribute('aria-expanded', !expanded);
+    if (parent.classList.contains('accordion__item--active')) {
+      zeroHeight(panel);
+      zeroPadding(panel);
+      parent.classList.remove('accordion__item--active');
+    } else {
+      panel.style.height = panel.getAttribute('data-height');
+      panel.style.paddingBottom = panel.getAttribute('data-padding-bottom');
+      parent.classList.add('accordion__item--active');
+    }
+  };
+
+  var animatePanel = function (control) {
     control.addEventListener('click', function () {
-      var parent = control.parentNode;
-      var panel = parent.childNodes[3];
-      var expanded = control.getAttribute('aria-expanded') === 'true';
-      control.setAttribute('aria-expanded', !expanded);
-      if (parent.classList.contains('accordion__item--active')) {
-        zeroHeight(panel);
-        zeroPadding(panel);
-        // panel.style.height = '0';
-        // panel.style.paddingBottom = '0';
-        parent.classList.remove('accordion__item--active');
-      } else {
-        panel.style.height = panel.getAttribute('data-height');
-        panel.style.paddingBottom = panel.getAttribute('data-padding-bottom');
-        parent.classList.add('accordion__item--active');
+      openClosePanel(control);
+    });
+    control.addEventListener('keydown', function (evt) {
+      if (evt.keyCode === 13) {
+        openClosePanel(control);
       }
     });
+
   };
 
   accordionControls.forEach(function (control) {
@@ -275,9 +316,8 @@
       keyboard: {
         enabled: true
       },
-      // watchOverflow: true,
       spaceBetween: 30,
-      // observer: true,
+      watchSlidesVisibility: true,
       breakpoints: {
         320: {
           slidesPerView: 2,
