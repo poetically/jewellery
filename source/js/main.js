@@ -297,40 +297,6 @@
     });
   }
 
-
-  // var unfocusChildInputs = function (panel) {
-  //   var inputs = panel.querySelectorAll('input');
-  //   inputs.forEach(function (input) {
-  //     input.setAttribute('tabindex', -1)
-  //   });
-  // }
-
-  // var focusOnChildInputs = function (panel) {
-  //   var inputs = panel.querySelectorAll('input');
-  //   inputs.forEach(function (input) {
-  //     input.setAttribute('tabindex', 0);
-  //   });
-  // }
-
-
-  // var animatePanel = function (control) {
-  //   control.addEventListener('click', function () {
-  //     var parent = control.parentNode;
-  //     var panel = parent.childNodes[3];
-  //     var expanded = control.getAttribute('aria-expanded') === 'true';
-  //     control.setAttribute('aria-expanded', !expanded);
-  //     if (parent.classList.contains('accordion__item--active')) {
-  //       zeroHeight(panel);
-  //       zeroPadding(panel);
-  //       parent.classList.remove('accordion__item--active');
-  //     } else {
-  //       panel.style.height = panel.getAttribute('data-height');
-  //       panel.style.paddingBottom = panel.getAttribute('data-padding-bottom');
-  //       parent.classList.add('accordion__item--active');
-  //     }
-  //   });
-  // };
-
   var openClosePanel = function (control) {
     var parent = control.parentNode;
     var panel = parent.childNodes[3];

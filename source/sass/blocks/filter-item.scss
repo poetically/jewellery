@@ -142,7 +142,7 @@
 .filter-item input[type="checkbox"]:checked:focus + label::before,
 .filter-item input[type="checkbox"]:hover + label::before,
 .filter-item input[type="checkbox"]:focus + label::before {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .filter-item input[type="checkbox"]:checked:active + label::before,
@@ -155,7 +155,7 @@
 .filter-item input[type="checkbox"]:checked:focus + label,
 .filter-item input[type="checkbox"]:hover + label,
 .filter-item input[type="checkbox"]:focus + label {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .filter-item input[type="checkbox"]:checked:active + label,
