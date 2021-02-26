@@ -189,6 +189,9 @@
       modal = filterModal;
       modalCloseBtn = filterClose;
       openModal();
+      if (!filterModal.classList.contains('modal--closed')) {
+        filterModal.focus();
+      }
       filterForm.addEventListener('submit', onSubmitCloseModal);
     });
   }
