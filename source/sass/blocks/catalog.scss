@@ -25,11 +25,15 @@
   padding: 0;
   margin: 0;
 
+  @media (max-width: 1280px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   @media (max-width: 650px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 490px) {
     grid-template-columns: repeat(2, 130px);
     grid-row-gap: 25px;
   }
@@ -37,15 +41,15 @@
 
 
 .catalog__item figure {
-  width: 100%;
+  width: 270px;
   margin: 0;
 
   @media (max-width: $tablet-max-width) {
-    // height: 208px;
+    width: 206px;
   }
 
-  @media (max-width: 450px) {
-    // height: 136px;
+  @media (max-width: 490px) {
+    width: 130px;
   }
 }
 
@@ -61,14 +65,14 @@
   width: 270px;
   height: 272px;
   vertical-align: middle;
-  object-fit: cover;
+  // object-fit: cover;
 
   @media (max-width: $tablet-max-width) {
     width: 206px;
     height: 208px;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 490px) {
     width: 130px;
     height: 136px;
   }
@@ -78,9 +82,11 @@
   text-decoration: none;
   color: inherit;
 
-  &:hover,
-  &:focus {
-    opacity: 0.8;
+  &:hover img,
+  &:focus img,
+  &:hover figcaption,
+  &:focus figcaption {
+    opacity: 0.7;
   }
 }
 

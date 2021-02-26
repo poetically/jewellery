@@ -82,6 +82,15 @@
     border: none;
     color: #ffffff;
     background-color: $brown;
+
+    &:hover,
+    &:focus {
+      opacity: 0.9;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
   }
 
   @media (max-width: $mobile-max-width) {

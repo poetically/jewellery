@@ -4,8 +4,10 @@
   var menuButton = document.querySelector('.page-header__menu-button');
   var accordionControls = document.querySelectorAll('.accordion__control');
   var accordionPanels = document.querySelectorAll('.accordion__panel');
+  var filterPanels = document.querySelectorAll('.filter-item__panel');
   var body = document.querySelector('body');
 
+  var filter = document.querySelector('.filter');
   var filterModal = document.querySelector('.filter__wrapper');
   var filterClose = document.querySelector('.filter__close');
   var filterOpen = document.querySelector('.filter__open');
@@ -69,7 +71,7 @@
     });
   }
 
-  // set focus
+  // set focus on modal inputs
 
   var setFocus = function () {
     if (loginEmail.value !== '') {
@@ -101,10 +103,38 @@
 
   // modal
 
+  // fix body for ios
+
+  var fixBody = function () {
+    setTimeout(function () {
+      if (!body.hasAttribute('data-scroll-fix')) {
+        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        body.setAttribute('data-scroll-fix', scrollPosition);
+        body.style.position = 'fixed';
+        document.body.style.top = '-' + scrollPosition + 'px';
+        document.body.style.left = '0';
+        document.body.style.width = '100%';
+      }
+    }, 15);
+  };
+
+  var unfixBody = function () {
+    if (body.hasAttribute('data-scroll-fix')) {
+      var scrollPosition = body.getAttribute('data-scroll-fix');
+      body.removeAttribute('data-scroll-fix');
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.width = '';
+      window.scroll(0, scrollPosition);
+    }
+  };
+
   /* close modal */
 
   var closeModal = function () {
     body.classList.remove('overlay');
+    unfixBody();
     modal.classList.add('modal--closed');
     modalCloseBtn.removeEventListener('click', onClickCloseModal);
     window.removeEventListener('keydown', onEscPressCloseModal);
@@ -140,6 +170,7 @@
 
   var openModal = function () {
     body.classList.add('overlay');
+    fixBody();
     modal.classList.remove('modal--closed');
     modalCloseBtn.addEventListener('click', onClickCloseModal);
     window.addEventListener('keydown', onEscPressCloseModal);
@@ -148,6 +179,10 @@
   };
 
   // show filter modal
+
+  if (filter) {
+    filter.classList.remove('filter--no-js');
+  }
 
   if (filterOpen && filterModal && filterClose && filterForm) {
     filterOpen.addEventListener('click', function () {
@@ -186,7 +221,7 @@
 
   if (loginPage) {
     window.addEventListener('load', function () {
-      verifyAndAddEmail();
+      verifyAndAddEmail(loginEmail);
       setFocus();
       loginForm.addEventListener('submit', function () {
         storeEmail(loginEmail);
@@ -210,11 +245,11 @@
 
   // accordion
 
-  var onResizeSavePanelHeight = function () {
-    savePanelOffsetHeight();
-  };
+  // var onResizeSavePanelHeight = function () {
+  //   savePanelOffsetHeight();
+  // };
 
-  window.addEventListener('resize', onResizeSavePanelHeight);
+  // window.addEventListener('resize', onResizeSavePanelHeight);
 
   var savePanelOffsetHeight = function () {
     accordionPanels.forEach(function (panel) {
@@ -247,6 +282,36 @@
     zeroHeight(panel);
   });
 
+  var manageFocusOnFilterInputs = function (panel, tabindexValue) {
+    var inputs = panel.querySelectorAll('input');
+    if (inputs) {
+      inputs.forEach(function (input) {
+        input.setAttribute('tabindex', tabindexValue);
+      });
+    }
+  };
+
+  if (filterPanels) {
+    filterPanels.forEach(function (panel) {
+      manageFocusOnFilterInputs(panel, -1);
+    });
+  }
+
+
+  // var unfocusChildInputs = function (panel) {
+  //   var inputs = panel.querySelectorAll('input');
+  //   inputs.forEach(function (input) {
+  //     input.setAttribute('tabindex', -1)
+  //   });
+  // }
+
+  // var focusOnChildInputs = function (panel) {
+  //   var inputs = panel.querySelectorAll('input');
+  //   inputs.forEach(function (input) {
+  //     input.setAttribute('tabindex', 0);
+  //   });
+  // }
+
 
   // var animatePanel = function (control) {
   //   control.addEventListener('click', function () {
@@ -275,10 +340,16 @@
       zeroHeight(panel);
       zeroPadding(panel);
       parent.classList.remove('accordion__item--active');
+      if (control.classList.contains('filter-item__control')) {
+        manageFocusOnFilterInputs(panel, -1);
+      }
     } else {
       panel.style.height = panel.getAttribute('data-height');
       panel.style.paddingBottom = panel.getAttribute('data-padding-bottom');
       parent.classList.add('accordion__item--active');
+      if (control.classList.contains('filter-item__control')) {
+        manageFocusOnFilterInputs(panel, 0);
+      }
     }
   };
 
@@ -295,6 +366,8 @@
   };
 
   accordionControls.forEach(function (control) {
+    control.setAttribute('tabindex', 0);
+    control.setAttribute('role', 'button');
     animatePanel(control);
   });
 
@@ -309,7 +382,6 @@
       keyboard: {
         enabled: true
       },
-      // watchOverflow: true,
       spaceBetween: 30,
       watchSlidesVisibility: true,
       breakpoints: {
@@ -337,19 +409,19 @@
             },
           },
         },
-        // 990: {
-        //   slidesPerView: 3,
-        //   slidesPerGroup: 3,
-        //   pagination: {
-        //     el: '.swiper__pagination',
-        //     clickable: true,
-        //     type: 'bullets',
-        //     renderBullet: function renderBullet(index, className) {
-        //       return '<span class="' + className + '">' + (index + 1) + '</span>';
-        //     },
-        //   },
-        // },
         1024: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          pagination: {
+            el: '.swiper__pagination',
+            clickable: true,
+            type: 'bullets',
+            renderBullet: function renderBullet(index, className) {
+              return '<span class="' + className + '">' + (index + 1) + '</span>';
+            },
+          },
+        },
+        1290: {
           slidesPerView: 4,
           slidesPerGroup: 4,
           pagination: {

@@ -101,13 +101,15 @@
 
 .page-header__jewellery-types {
   display: flex;
-  padding: 18px 0;
+  padding: 18px 0 8px;
   border-top: 1px solid #f6f5f4;
+  margin-right: -10px;
 
   @media (max-width: $tablet-max-width) {
     border-top: none;
     padding-left: 45px;
     padding-top: 5px;
+    margin-right: 0;
   }
 
   @media (max-width: $mobile-max-width) {
@@ -148,6 +150,10 @@
   @media (max-width: $mobile-max-width) {
     margin-bottom: 15px;
   }
+}
+
+.page-header__jewellery-item {
+  padding-bottom: 10px;
 }
 
 .page-header__jewellery-item a {
@@ -288,7 +294,6 @@
     overflow: auto;
     color: #ffffff;
     background-color: $brown;
-    padding-bottom: 75px;
     z-index: 23;
 
     .page-header__menu-button,
@@ -339,6 +344,7 @@
       display: block;
       text-decoration: none;
       color: inherit;
+      padding-bottom: 75px;
     }
   }
 
@@ -375,6 +381,10 @@
       grid-column-end: 4;
     }
 
+    .page-header__jewellery-types {
+      display: block;
+    }
+
 
     .page-header__about-info {
       display: flex;
@@ -399,5 +409,11 @@
   @media (max-width: $mobile-max-width) {
     left: 15px;
     top: 35px;
+  }
+}
+
+.page-header .page-header__login--bottom {
+  @media (max-width: $mobile-max-width) {
+    padding-left: 15px;
   }
 }

@@ -936,6 +936,11 @@ button.swiper__pagination-bullet {
     background-image: url("../img/icon-shevron.svg");
     background-repeat: no-repeat;
     background-position: 0 0; }
+  .accordion__control:hover, .accordion__control:focus {
+    opacity: 0.8;
+    outline: none; }
+  .accordion__control:focus {
+    background: linear-gradient(#e6bea8, #ffffff); }
   @media (max-width: 1023px) {
     .accordion__control::after {
       width: 25px;
@@ -1010,7 +1015,25 @@ button.swiper__pagination-bullet {
   .filter .modal__inner {
     width: 280px; } }
 
-.login {
+@media (max-width: 1023px) {
+  .filter--no-js .filter__open {
+    display: none; }
+  .filter--no-js .modal {
+    position: static;
+    display: block;
+    background-color: #ffffff; }
+  .filter--no-js .modal__close {
+    display: none; }
+  .filter--no-js .modal--closed {
+    visibility: initial;
+    opacity: 1; }
+  .filter--no-js .modal__inner {
+    box-shadow: none;
+    margin-top: 0;
+    border: 1px solid #a87b62;
+    margin-bottom: 50px; } }
+
+.login--modal {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -1021,46 +1044,49 @@ button.swiper__pagination-bullet {
   bottom: 0;
   z-index: 4;
   background-color: rgba(0, 0, 0, 0.2); }
-  .login .modal__body {
-    min-height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 10px; }
-  .login .modal__inner {
+  .login--modal .modal__inner {
     position: relative;
     z-index: 5; }
-  .login .modal__close {
+  .login--modal .modal__close {
     position: absolute;
     display: block;
-    top: 20px;
-    right: 20px;
-    width: 14px;
-    height: 14px;
+    top: 12px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
     border: none;
     background-image: url("../img/icon-login-close.svg");
-    background-position: 0 0;
+    background-position: 8px 8px;
+    background-size: 14px 14px;
     background-repeat: no-repeat;
     background-color: transparent;
     z-index: 6;
     cursor: pointer; }
-    .login .modal__close:hover, .login .modal__close:focus {
+    .login--modal .modal__close:hover, .login--modal .modal__close:focus {
       opacity: 0.9; }
-    .login .modal__close:active {
+    .login--modal .modal__close:active {
       opacity: 0.8; }
     @media (max-width: 1023px) {
-      .login .modal__close {
-        width: 20px;
-        height: 20px; } }
+      .login--modal .modal__close {
+        top: 9px;
+        right: 9px;
+        width: 40px;
+        height: 40px;
+        background-position: 10px 10px;
+        background-size: 20px 20px; } }
     @media (max-width: 767px) {
-      .login .modal__close {
-        width: 14px;
-        height: 14px; } }
+      .login--modal .modal__close {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        background-position: 8px 8px;
+        background-size: 14px 14px; } }
 
 .login.modal--closed {
   visibility: hidden; }
 
-.added {
+.added--modal {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -1071,32 +1097,35 @@ button.swiper__pagination-bullet {
   bottom: 0;
   z-index: 4;
   background-color: rgba(0, 0, 0, 0.2); }
-  .added .modal__inner {
+  .added--modal .modal__inner {
     position: relative;
     z-index: 5; }
-  .added .modal__close {
+  .added--modal .modal__close {
     position: absolute;
     display: block;
-    top: 20px;
-    right: 20px;
-    width: 14px;
-    height: 14px;
+    top: 10px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
     border: none;
     background-image: url("../img/icon-login-close.svg");
-    background-position: 0 0;
+    background-position: 8px 8px;
+    background-size: 14px 14px;
     background-repeat: no-repeat;
     background-color: transparent;
     z-index: 6;
     cursor: pointer; }
-    .added .modal__close:hover, .added .modal__close:focus {
+    .added--modal .modal__close:hover, .added--modal .modal__close:focus {
       opacity: 0.8; }
     @media (max-width: 767px) {
-      .added .modal__close {
-        width: 14px;
-        height: 14px;
-        top: 15px;
-        right: 15px; } }
-    .added .modal__close:active {
+      .added--modal .modal__close {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        background-position: 8px 8px;
+        background-size: 14px 14px; } }
+    .added--modal .modal__close:active {
       opacity: 0.7; }
 
 .added.modal--closed {
@@ -1260,13 +1289,15 @@ button.swiper__pagination-bullet {
 
 .page-header__jewellery-types {
   display: flex;
-  padding: 18px 0;
-  border-top: 1px solid #f6f5f4; }
+  padding: 18px 0 8px;
+  border-top: 1px solid #f6f5f4;
+  margin-right: -10px; }
   @media (max-width: 1023px) {
     .page-header__jewellery-types {
       border-top: none;
       padding-left: 45px;
-      padding-top: 5px; } }
+      padding-top: 5px;
+      margin-right: 0; } }
   @media (max-width: 767px) {
     .page-header__jewellery-types {
       padding-left: 15px; } }
@@ -1298,6 +1329,9 @@ button.swiper__pagination-bullet {
   @media (max-width: 767px) {
     .page-header__jewellery-types ul {
       margin-bottom: 15px; } }
+
+.page-header__jewellery-item {
+  padding-bottom: 10px; }
 
 .page-header__jewellery-item a {
   text-decoration: none;
@@ -1410,7 +1444,6 @@ button.swiper__pagination-bullet {
     overflow: auto;
     color: #ffffff;
     background-color: #a87b62;
-    padding-bottom: 75px;
     z-index: 23; }
     .page-header--menu-opened .page-header__menu-button,
     .page-header--menu-opened .page-header__cart::before {
@@ -1442,7 +1475,8 @@ button.swiper__pagination-bullet {
     .page-header--menu-opened .page-header__login--bottom {
       display: block;
       text-decoration: none;
-      color: inherit; }
+      color: inherit;
+      padding-bottom: 75px; }
   .page-header--no-js {
     background-color: #a87b62;
     color: #ffffff;
@@ -1463,6 +1497,8 @@ button.swiper__pagination-bullet {
       grid-row-end: 3;
       grid-column-start: 1;
       grid-column-end: 4; }
+    .page-header--no-js .page-header__jewellery-types {
+      display: block; }
     .page-header--no-js .page-header__about-info {
       display: flex;
       flex-direction: column; }
@@ -1480,6 +1516,10 @@ button.swiper__pagination-bullet {
     left: 15px;
     top: 35px; } }
 
+@media (max-width: 767px) {
+  .page-header .page-header__login--bottom {
+    padding-left: 15px; } }
+
 .page-main {
   min-width: 0; }
   .page-main .carousel {
@@ -1487,7 +1527,7 @@ button.swiper__pagination-bullet {
   @media (max-width: 1023px) {
     .page-main .carousel {
       margin-bottom: 61px; } }
-  @media (max-width: 1023px) {
+  @media (max-width: 767px) {
     .page-main .carousel {
       margin-bottom: 53px; } }
 
@@ -1534,10 +1574,15 @@ button.swiper__pagination-bullet {
   padding-top: 178px;
   text-align: center;
   margin: 0; }
+  @media (max-width: 1023px) {
+    .page-main__title {
+      padding-top: 182px;
+      margin-left: -15px; } }
   @media (max-width: 767px) {
     .page-main__title {
       font-size: 38px;
-      padding-top: 190px; } }
+      padding-top: 190px;
+      margin-left: 0; } }
 
 .page-main__subtitle {
   font-family: "Cormorant Garamond", "Georgia", serif;
@@ -1548,9 +1593,15 @@ button.swiper__pagination-bullet {
   text-align: center;
   color: #ffffff;
   margin: 0; }
+  @media (max-width: 1023px) {
+    .page-main__subtitle {
+      margin-top: -5px;
+      margin-left: -15px; } }
   @media (max-width: 767px) {
     .page-main__subtitle {
-      font-size: 34px; } }
+      font-size: 34px;
+      margin-top: 0;
+      margin-left: 0; } }
 
 @media (max-width: 1023px) {
   .page-main__title-wrapper--menu-opened {
@@ -1603,7 +1654,7 @@ button.swiper__pagination-bullet {
     line-height: 130%;
     text-decoration: none;
     color: inherit;
-    padding-bottom: 22px; }
+    margin-bottom: 22px; }
   .page-footer__conditions a:hover,
   .page-footer__conditions a:focus,
   .page-footer__about-info a:hover,
@@ -1873,12 +1924,18 @@ button.swiper__pagination-bullet {
   width: 100%;
   height: 100%;
   padding-top: 110px; }
+  @media (max-width: 1290px) {
+    .carousel__container {
+      width: 870px;
+      margin: 0 auto; } }
   @media (max-width: 1023px) {
     .carousel__container {
-      padding-top: 100px; } }
+      padding-top: 100px;
+      width: 678px; } }
   @media (max-width: 767px) {
     .carousel__container {
-      padding-top: 90px; } }
+      padding-top: 90px;
+      width: 290px; } }
 
 .carousel__slide-wrapper {
   padding-bottom: 160px; }
@@ -1889,17 +1946,20 @@ button.swiper__pagination-bullet {
 .carousel__slide a {
   text-decoration: none;
   color: inherit; }
+  .carousel__slide a:hover img,
+  .carousel__slide a:focus img,
+  .carousel__slide a:hover figcaption,
+  .carousel__slide a:focus figcaption {
+    opacity: 0.7; }
 
 .carousel__slide figure {
-  width: auto;
+  width: 270px;
   height: 284px;
   margin: 0; }
 
 .carousel__slide img {
   width: 270px;
-  height: 284px;
-  -o-object-fit: cover;
-     object-fit: cover; }
+  height: 284px; }
 
 .carousel__slide figcaption {
   display: block;
@@ -1916,13 +1976,15 @@ button.swiper__pagination-bullet {
 
 @media (max-width: 1023px) {
   .carousel__slide figure {
+    width: 324px;
     height: 340px; }
   .carousel__slide img {
     width: 324px;
     height: 340px; } }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .carousel__slide figure {
+    width: 130px;
     height: 136px; }
   .carousel__slide img {
     width: 130px;
@@ -2503,6 +2565,9 @@ button.swiper__pagination-bullet {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   padding: 80px 60px 75px; }
+  @media (max-width: 1280px) {
+    .catalog-main__filter-catalog {
+      justify-content: center; } }
   @media (max-width: 1023px) {
     .catalog-main__filter-catalog {
       display: block;
@@ -2517,7 +2582,7 @@ button.swiper__pagination-bullet {
   padding-right: 30px;
   grid-row: 1 / 2;
   grid-column: 1 / 2;
-  min-width: 220px; }
+  min-width: 250px; }
   @media (max-width: 1023px) {
     .catalog-main__filter {
       padding-right: 0; } }
@@ -2589,7 +2654,11 @@ button.swiper__pagination-bullet {
       font-weight: 500;
       border: none;
       color: #ffffff;
-      background-color: #a87b62; } }
+      background-color: #a87b62; }
+      .filter__open:hover, .filter__open:focus {
+        opacity: 0.9; }
+      .filter__open:active {
+        opacity: 0.8; } }
   @media (max-width: 767px) {
     .filter__open {
       margin-bottom: 40px; } }
@@ -2837,17 +2906,26 @@ button.swiper__pagination-bullet {
   list-style: none;
   padding: 0;
   margin: 0; }
+  @media (max-width: 1280px) {
+    .catalog__list {
+      grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 650px) {
     .catalog__list {
       grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 450px) {
+  @media (max-width: 490px) {
     .catalog__list {
       grid-template-columns: repeat(2, 130px);
       grid-row-gap: 25px; } }
 
 .catalog__item figure {
-  width: 100%;
+  width: 270px;
   margin: 0; }
+  @media (max-width: 1023px) {
+    .catalog__item figure {
+      width: 206px; } }
+  @media (max-width: 490px) {
+    .catalog__item figure {
+      width: 130px; } }
 
 .catalog__item figcaption {
   margin-top: 22px; }
@@ -2858,14 +2936,12 @@ button.swiper__pagination-bullet {
 .catalog__item img {
   width: 270px;
   height: 272px;
-  vertical-align: middle;
-  -o-object-fit: cover;
-     object-fit: cover; }
+  vertical-align: middle; }
   @media (max-width: 1023px) {
     .catalog__item img {
       width: 206px;
       height: 208px; } }
-  @media (max-width: 450px) {
+  @media (max-width: 490px) {
     .catalog__item img {
       width: 130px;
       height: 136px; } }
@@ -2873,8 +2949,11 @@ button.swiper__pagination-bullet {
 .catalog__item a {
   text-decoration: none;
   color: inherit; }
-  .catalog__item a:hover, .catalog__item a:focus {
-    opacity: 0.8; }
+  .catalog__item a:hover img,
+  .catalog__item a:focus img,
+  .catalog__item a:hover figcaption,
+  .catalog__item a:focus figcaption {
+    opacity: 0.7; }
 
 .catalog__item p {
   margin: 0;
@@ -3162,13 +3241,26 @@ button.swiper__pagination-bullet {
       text-align: center;
       margin: -25px auto 0; } }
 
-.login--page .login__inner {
-  margin-top: 30px; }
+.login--page {
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.02);
+  min-height: 100vh; }
+
+.login__logo {
+  width: 66px;
+  margin: 50px auto 30px; }
+  .login__logo path {
+    fill: #a87b62; }
+  .login__logo a:hover,
+  .login__logo a:focus {
+    opacity: 0.8; }
+  .login__logo a:active {
+    opacity: 0.7; }
 
 .login__inner {
   width: 430px;
   box-sizing: border-box;
-  margin-top: 30px auto 0;
+  margin: 0 auto;
   padding: 200px 45px 45px;
   background-color: #f0eae4;
   background-image: url("../img/bg-login-desktop.jpg");
@@ -3295,8 +3387,29 @@ button.swiper__pagination-bullet {
     .login__sign-up a:hover, .login__sign-up a:focus {
       text-decoration: underline; }
 
+.added--page {
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.02);
+  min-height: 100vh; }
+
+.added__logo {
+  width: 66px;
+  margin: 50px auto 30px; }
+  .added__logo path {
+    fill: #a87b62; }
+  .added__logo a:hover,
+  .added__logo a:focus {
+    opacity: 0.8; }
+  .added__logo a:active {
+    opacity: 0.7; }
+  @media (max-width: 767px) {
+    .added__logo {
+      width: 52px;
+      height: 52px; } }
+
 .added--page .added__inner {
-  margin-top: 50px; }
+  display: block;
+  margin: 0 auto; }
 
 .added__inner {
   width: 500px;

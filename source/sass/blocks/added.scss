@@ -1,5 +1,35 @@
+.added--page {
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.02);
+  min-height: 100vh;
+}
+
+.added__logo {
+  width: 66px;
+  margin: 50px auto 30px;
+
+  path {
+    fill: $brown;
+  }
+
+  a:hover,
+  a:focus {
+    opacity: 0.8;
+  }
+
+  a:active {
+    opacity: 0.7;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    width: 52px;
+    height: 52px;
+  }
+}
+
 .added--page .added__inner {
-  margin-top: 50px;
+  display: block;
+  margin: 0 auto;
 }
 
 .added__inner {

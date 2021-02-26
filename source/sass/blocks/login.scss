@@ -1,11 +1,38 @@
-.login--page .login__inner {
-  margin-top: 30px;
+.login--page {
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.02);
+  min-height: 100vh;
+}
+
+.login__logo {
+  width: 66px;
+  margin: 50px auto 30px;
+
+  path {
+    fill: $brown;
+  }
+
+  a:hover,
+  a:focus {
+    opacity: 0.8;
+  }
+
+  a:active {
+    opacity: 0.7;
+  }
+
+  // @media (max-width: $mobile-max-width) {
+  //   img {
+  //     width: 52px;
+  //     height: 52px;
+  //   }
+  // }
 }
 
 .login__inner {
   width: 430px;
   box-sizing: border-box;
-  margin-top: 30px auto 0;
+  margin: 0 auto;
   padding: 200px 45px 45px;
   background-color: #f0eae4;
   background-image: url("../img/bg-login-desktop.jpg");
